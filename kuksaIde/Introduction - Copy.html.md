@@ -14,9 +14,9 @@ The development of software-intensive automotive systems by the Origional Equipm
 
 2. Follow the install wizard to accept the license, authorize the installer, and proceed with the install. ![A test image](DockerImage.png)
 
-3. You are asked to authorize Docker.app with your system password during the install process. Privileged access is needed to install networking components, links to the Docker apps, and manage the Hyper-V VMs.![Enabling Hype-V container feature](Enabling Container features.png)
+3. You are asked to authorize Docker.app with your system password during the install process. Privileged access is needed to install networking components, links to the Docker apps, and manage the Hyper-V VMs.
 
-4. Click Finish on the setup complete dialog to launch Docker.
+Click Finish on the setup complete dialog to launch Docker.
 
 
 As Eclipse Che is a top-level project in the cloud development Eclipse Cloud Development (ECD), the Che assembly needs to be identified. Therefore, Che assembly is either .war or a Tomcat assembly (https://www.eclipse.org/che/docs/che-6/assemblies.html). However, ***missing*** 
