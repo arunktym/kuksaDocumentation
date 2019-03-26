@@ -24,16 +24,27 @@ The development of software-intensive automotive systems by the Origional Equipm
     * For manual installation and upgrading, use [install it manually](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-from-a-package). Which might be useful in situations as installing Docker on air-gapped systems with no access to the internet.
     * For testing and development purpose, use automated [convenience scripts](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-convenience-script) to install Docker.
   
-  ### Install using the repository
-  Set up the Docker repository by following the steps:
-  1. Update the <span style="color:lightblue">apt</span> pakage index    
+## Install using the repository
+Set up the Docker repository by following the steps:
+1. Update the <span style="color:lightblue">apt</span> pakage index    
           ```$ sudo apt-get update```
 
 2. Coppy and paste the following line of command to allow <span style="color:lightblue">apt</span> to use repository over HTTPS:
    
-   ```sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent    software-properties-common```
+   ```sudo apt-get install \apt-transport-https \```
+
+   ```ca-certificates\curl \gnupg-agent\```
+
+   ```software-properties-common```
 
 3. Getting Docker’s official GPG key: type the command:
+
+Coppy and peste the following command:
+
+   ```curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -```
+
+This will show:
+<span style="color:lightblue">OK</span>
    
    ```sudo apt-key fingerprint ```
 
@@ -52,14 +63,51 @@ To verify the fingerprint key: use the last 8 characters, in this case (D38B4796
 
 ```sub   rsa4096 2017-01-24 [S] [expires: 2020-01-24]``` 
 
+4. Using the following command set up a <span style="color:lightblue">stable</span> repository. To get the latest release of general availability, use <span style="color:lightblue">Stable</span>. <span style="color:lightblue">Nightly</span> and <span style="color:lightblue">Test</span> can be added next to the word <span style="color:lightblue">Stable</span> together as <span style="color:lightblue">Stable Test Nightly</span> or separately as <span style="color:lightblue">Stable Test</span> or <span style="color:lightblue">Stable Nightly</span>for updating Docker CE. [Learn more on Docker CE update channels](https://docs.docker.com/install/).
 
-1. Double-click [Docker](https://docs.docker.com/docker-for-windows/install/) Desktop for Windows Installer.exe to run the installer. The downloaded installer (Docker Desktop Installer.exe), can be found from (download.docker.com). It usually downloads to the Downloads folder, or else, run it from the recent downloads bar at the bottom of the web browser (if Google Chrome is used).
+      ```kirubel@kiru:~$ sudo add-apt-repository \```
 
-2. Follow the install wizard to accept the license, authorize the installer, and proceed with the install. ![A test image](DockerImage.png)
+     ```"deb [arch=amd64] https://download.docker.com/linux/ubuntu \```
 
-3. You are asked to authorize Docker.app with your system password during the install process. Privileged access is needed to install networking components, links to the Docker apps, and manage the Hyper-V VMs.![Enabling Hype-V container feature](Enabling Container features.png)
+     ```$(lsb_release -cs) \```
+     
+     ```stable"```
 
-4. Click Finish on the setup complete dialog to launch Docker.
+## Install Docker CE
+Docker CE installation has the following three steps:
+
+1. Update the <span style="color:lightblue">apt </span> (Advanced Package Tool) index.
+
+      ```~$ sudo apt-get update```
+2. The latest version of Docker CE and containerd can be installed using the follwoing command:
+   ```~$ sudo apt-get install docker-ce docker-ce-cli containerd.io```
+However, specific specific version of Docker CE can be installed from the repo. To list the available version in your repo, use the command: 
+
+   a. 
+
+    ```~$ apt-cache madison docker-ce```
+
+![Terminal window looks like](Docker_CE_from_repo.png)
+
+  b. The next step is to install specific version using the **version string** displayed in the terminal window. e.g ```5:18.09.3~3-0~ubuntu-bionic```.
+
+```$ sudo apt-get install docker-ce=<VERSION_STRING>``` ```docker-ce-cli=<VERSION_STRING> containerd.io```
+
+3. To verify Docker CE has installed correctly, run <span style="color:lightblue"> hello-world </span> image.
+
+  ```~$ sudo docker run hello-world```
+
+The above command downloads a test image and runs it in a container. The container runs and prints informational message and exits as shown in the terminal window below. 
+![runing hello world](Hello-world_docker.png)
+
+Docker CE is installed and running. The docker group is created but no users are added to it. You need to use sudo to run Docker commands. Continue to Linux postinstall to allow non-privileged users to run Docker commands and for other optional configuration steps.
+2. Double-click [Docker](https://docs.docker.com/docker-for-windows/install/) Desktop for Windows Installer.exe to run the installer. The downloaded installer (Docker Desktop Installer.exe), can be found from (download.docker.com). It usually downloads to the Downloads folder, or else, run it from the recent downloads bar at the bottom of the web browser (if Google Chrome is used).
+
+3. Follow the install wizard to accept the license, authorize the installer, and proceed with the install. ![A test image](DockerImage.png)
+
+4. You are asked to authorize Docker.app with your system password during the install process. Privileged access is needed to install networking components, links to the Docker apps, and manage the Hyper-V VMs.![Enabling Hype-V container feature](Enabling Container features.png)
+
+5. Click Finish on the setup complete dialog to launch Docker.
 
 
 As Eclipse Che is a top-level project in the cloud development Eclipse Cloud Development (ECD), the Che assembly needs to be identified. Therefore, Che assembly is either .war or a Tomcat assembly (https://www.eclipse.org/che/docs/che-6/assemblies.html). However, ***missing*** 
