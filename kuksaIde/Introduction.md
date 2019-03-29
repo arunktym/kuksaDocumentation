@@ -10,7 +10,7 @@ The development of software-intensive automotive systems by the Origional Equipm
 
 *InVehicle*, *AGL build scripts*, *IDE*, *Cloud*, *Integration*, *Apps*, *[Website](https://projects.eclipse.org/projects/iot.kuksa)*. Each of these components will be discussed in details. 
 ### Installing Docker for Ubuntu
-* Check the Ubuntu version using the command ![*lsb_release -a*](check_ubuntu_version0.png). 
+* Check the Ubuntu version using the command ![*lsb_release -a*](version_check.png). 
 * To Get the Comunity Edition (Docker CE) version for ubuntu, make sure you have 64-bit version of Ubuntu. 
     * Cosmic 18.10
     * Bionic 10.04 (LTS)
