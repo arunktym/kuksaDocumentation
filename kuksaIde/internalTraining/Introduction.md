@@ -26,6 +26,7 @@ The development of software-intensive automotive systems by the Origional Equipm
   
 ## Install using the repository
 Set up the Docker repository by following the steps:
+> 1.update the 
 1. Update the <span style="color:lightblue">apt</span> pakage index    
           ```$ sudo apt-get update```
 
