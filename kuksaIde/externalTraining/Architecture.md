@@ -543,4 +543,9 @@ ID| Property|
 ||– External IP addresses
 ||– Ports|
 
+
+
+
 ![The general system architecture](CloudeArchitecture.png)
+           
+**The picture below summurizes the concepts discussed above.**
