@@ -1,5 +1,5 @@
 # Architecture
-The overall platform of the security-relevant aspects of the Appstacle environment architecture is divided in to three building blocks:
+The overall platform of the security-relevant aspects of the APPSTACLE environment architecture is divided in to three building blocks:
    > 1. In-vehicle platform,
    > 2. 5G Infrastructure, and
    > 3. Cloud back-end. 
@@ -25,13 +25,46 @@ The APPSTACLE environment is created to provide addon services to the connected 
 
 <img src="kuksaComponents.png" width="750" height="300" />
 
+### *Figure 1. Eclipse base Open source solutions to inreach kuksa components*
+
 *(source:https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail)*
 
  
 
 The in-vehicle platform addtionally provides means for rertrieving telemetry data collected by the vehicle itself as well as a human machine interface (HMI ) for user interaction.
 
-## **In-vehicle connectivity** concept:
+# 1. **In-vehicle connectivity** :
+
+This section provides an overview of the communication protocols that are currently used in the existing automotive architectures as well as their interconnections in the Electrical / Electronic (E/E) in-vehicle architecture.
+The scope of these protocols defines the in-vehicle communication interfaces for
+the APPSTACLE platform. 
+
+## Protocols
+
+Automotive protocols are classified by the Society of Automotive Engineers (SAE) into four categories according to the transmission rate and their role in the automotive architecture. Specifically, Class A defines the protocols that are used for convenience systems (e.g. lighting, windows, seatcontrols) and require inexpensive, low-speed communication. Class B defines the protocols supporting instrument cluster or vehicle speed communication and require medium-speed communication. Furthermore, Class C is defined for real-time control ECUs such as the engine, braking and steer-
+by-wire and require high-speed communication. Finally, telematics systems usually require higher communication speed for multimedia (audio / video) and navigation, and therefore SAE defined the additional Class D communications. All four protocol Class categories are illustrated in <span style="color:lightblue">Table 1</span> along with the protocols that belong to each category and are used for in-vehicle communication in terms of their characteristics.
+
+![](AutomotiveNetwork.png)
+
+   ### Firugre 2. Automotive Network.
+
+
+
+ ### *Table 1.: Characteristics of the communication protocols*
+
+ |Bus|LIN|CAN|CAN FD|FlexRay|MOST|Automotive Ethernet|
+ |---|----|----|----|----|----|----| 
+ |Used in Application domains Message transmission Access control Maximum Data Rate Protocol Class | Subnets Body Soft Synchronous Polling 20 kbps A|Soft real-time Powertrain, Chassis Asynchronous CSMA/CA 1 Mbps BC| Soft real-time a a CSMA/CA 10 Mbps D|Hard real-time Chassis, Powertrain Synchronous and Asynchronous TDMA 10 Mbps D | Multimedia Multimedia and Telematics Synchronous and Asynchronous CSMA/CA 24Mbps D| Multimedia Telematics and active safety Synchronous and Asynchronous CSMA/CD 100Mbps D| 
+ 
+
+### Architectural Overview
+
+Modern automotive embedded systems consist of several subsystems, which are comprised of one
+or several Electronic Control Units (ECUs). In turn, the ECUs are made up of a micro-controller
+and a set of sensors and actuators. They are able to communicate through the transmission of
+electronic or optical signals through a dedicated communication unit. The subsystems that rely on network communication in automotive systems are divided into five main categories: power train, chassis, body, HMI, and telematics (illustrated in <span style="color:lightblue">Figure 2</span>). Each subsystem uses a different protocol to communicate, which is selected based on the architectural requirements and the subsystem functionality. Specifically, the powertrain domain is related to the systems that participate in the longitudinal propulsion of the vehicle,including engine, transmission and all subsidiary components. This domain is supported by a dedicated subsystem called Drive CAN using the Controller Area Network (CAN) for data exchange. The chassis domain refers to the four wheels and their relative position and movement; in this domain the systems are mainly steering and braking. In this subsystem category we find two protocols that are used for high-critical communication, namely CAN and FlexRay, as well as the Local Interconnect Network (LIN) for the lower critical functionalities (e.g. door locking, window raising / lowering). According to the EAST-EEA 1 project definition the body domain includes the entities that do not belong to the vehicle dynamics (i.e., being those that support the car’s user) such as airbags, wipers, lighting, etc. Today’s cars sometimes use two CAN buses (peripheral CAN and body CAN) which interconnect the ECUs of the comfort domain. The telematics domain includes the equipment allowing information exchange between electronic systems and the driver (displays and switches). Such interactions are possible through the infotainment subsystem that is supported by the MOST protocol. Finally additional peripheral systems (e.g.,cameras) allow the in-vehicle system to monitor and extract information from its physical environment through the use of Automotive Ethernet technologies. All the aforementioned systems are able to exchange data through a central gateway (<span style="color:lightblue">Figure 2</span>) that is able to map (through packet encapsulation) or forward messages from one subsystem to another.
+
+
 
 |ID| Property|
   |------|------|
@@ -45,6 +78,55 @@ The in-vehicle platform addtionally provides means for rertrieving telemetry dat
 ||• Development of software modules for handling data for each protocol|
 
 ## **Ex-vehicle connectivity** concept:
+
+The technology evolution in the automotive vehicles contributed to the demands for smarter mobility solutions. These solutions are focused on several types of V2X communication:
+
+• Vehicle-2-Vehicle (V2V)
+
+• Vehicle-2-Infrastructure/Infrastructure-2-Vehicle (V2I,I2V)
+
+• Vehicle-2-Pedestrian (V2P) / Pedestrian-2-Vehicle (P2V)
+
+• Vehicle-2-Network (V2N) / Network-2-Vehicle (N2V), 5) Infrastructure-2-Network (I2N) /
+Network-2-Infrastructure (N2I).
+
+These types along with their interactions are demonstrated in <span style="color:lightblue">Figure 3</span>.
+
+![](V2XCommunicationType.png)
+
+### *Figure 3. V2X communication types*
+
+The units supporting V2X communication are:
+
+• *RoadSide unit (RSU)*: It is connected to road sensors (e.g. induction loops, cameras) and
+a local control center, such that it performs actions or exchanges critical information other
+vehicles or servers about road or traffic management.
+
+• *OnBoard unit (OBU)*: The on-board unit (OBU) is a radio built-in vehicle device mounted on
+each vehicle that transmits vehicle data (i.e. identification and location) to a transponder. The OBU itself is a transponder, that is, a data exchange takes place automatically and only on
+request of one of the participating devices. It allows Vehicle-to-Vehicle (V2V) and Vehicle-to-Infrastructure (V2I, I2V) communications with other OBUs or RSUs.
+
+• *Backend server* : It is composed by a PKI, traffic management and roadside unit management
+servers, all accessible via the RSU’s or cellular base stations.
+In order to facilitate this evolution a couple of solutions were defined that are split into 3 main categories:
+
+• *5G radio access technologies*: This technology provides wide area, broadband access. The
+5G technology is currently in the process of conceptual development and standardization by
+the World Radiocommunication Conference (WRC). The 5G technology is expected to have
+a specific V2X aspect of the 5G technology in a practical scale after 2020. However, in this
+document we are leveraging the limited standardization to illustrate conceptually its main scope
+and architectural view.
+
+• *Pre-5G radio access technologies*: Multiple cellular technologies were identified by the ETSI
+3rd Generation Partnership Project (3GPP), LoRa Alliance and other organizations, such as
+Narrowband IoT , Long Term Evolution for Machines (LTE-M), LoRA are considered. Even though these technologies are already used in V2P/P2V, the main challenge when adopting them in other V2X communication types are reliability and safety, which are currently not addressed in the scope of Low-Power Wide Area Networks (LPWAN). 
+
+• *Non-cellular technologies providing wireless access*: IEEE has defined different standards for wireless communication, such as 802.11ac and 802.11p, however only 802.11p is flexible in
+terms of throughput and offers higher reliability, even though its maximal throughout is more
+limited than 802.11ac (from 3 to 27 Mbps raw data rate). The reason behind this is that
+802.11p was designed particularly for for safety-related Vehicular Ad-hoc NETworks (VANET),
+including the V2V and V2I/I2V concepts. IEEE 802.11p technology is currently fully specified
+and already deployed in different locations. The following paragraphs start with a description of the scenarios supported by 802.11p communi-cation and cellular communication. This is followed by a description on both the 802.11p and 5G technologies. In the scope of this section we focus on these two technologies, because, to the best of our knowledge, they are considered as the leading candidates for V2X communication. ![For detail information](.Appstacle_deliverable_1.1.pdf)
 
 |ID| Property|
   |------|------|
@@ -68,6 +150,32 @@ The in-vehicle platform addtionally provides means for rertrieving telemetry dat
 |5.|Initialisation / start up: The APP Runtime is started during the (secure) boot process. It can be configured by the OEM and the vehicle owner (details are left open in this document), e.g., to configure permissions ("the policy").|
 
 ## **Automotive API** concept:
+
+The Application Programming Interface (API) for vehicles are introduced and discussed in here. The automotive API's try to achieve (a) merging the potentially very complex device and network structure of a car into a single virtual device and (b) hiding the differences between manufacturers, models and makes behind a common interface. On the other hand these interfaces strongly differ in their scope (data-subset or use-case), technological approach and creators.
+
+### AUTOSAR
+
+AUTomotive Open System ARchitecture (AUTOSAR) is a cooperation between car manufacturers,
+OEMs and tool manufacturers and defines a software development paradigm for Electronic Control
+Units (ECUs) in the automotive domain. In order to separate the development process of application software from the chosen ECU hardware platform, AUTOSAR is introducing a layer model with the three layers Application Software, Runtime Environment and Basic Software (illustrated IN <span style="color:lightblue">Figure 4</span>).
+
+![Autosar Layer Models](AutosarLayerModel.png)
+
+### *Figure 4. Autosar Layers*
+
+The top layer is formed by the application software. It is divided into software components, each of which realizes a part of the application and can consume and provide data via so-called ports. Any communication that does not take place via port connections is forbidden. A port is classified via a port interface (here referred to as interface). Two ports can only be connected to each other if both ports use compatible interfaces.
+Two important communication paradigms, that are selected by interfaces, are client-server and
+sender-receiver communication. For client-server communication, a server component provides
+functions (C, C++) which can be called by clients. A 1:n communication is also possible (i. e. a
+server can provide its functionality to several clients). In sender-receiver communication, a sender provides data that can be consumed by receiver components. Both 1:n and m:1 communication is possible here (i.e. a date can be consumed by several components or several senders provide a date for one receiver concurrently). Many-to-many communication is not provided.
+
+The lower layer consists of the basic software and contains the hardware drivers, the operating
+system and the communication stack. The communication stack handles communication from and
+to other ECUs that are connected via network interfaces like CAN, LIN, Flexray, automotive Ethernet, etc.
+
+All communication, whether between software components on the upper level or between software
+components and basic software on the lower level, is realized via the runtime environment (RTE),
+which forms the middle layer. The RTE specification document defines a schema for API functions (C, C++), which are usually generated by code generators of the AUTOSAR modeling tools according to the modeled communication between software components and basic software. All communication must take place via the (generated) API functions. Other communication is not permitted. Likewise, all communication interfaces must be defined at the time of development, which makes it impossible to dynamically extend the software architecture at runtime. ![For detail information](.Appstacle_deliverable_1.1.pdf)
 
 |ID| Property|
   |------|------|
@@ -194,7 +302,7 @@ The in-vehicle platform addtionally provides means for rertrieving telemetry dat
 ||• User credentials|
 
 
-## 2. 5G-Infrastructure
+# **2. 5G-Infrastructure**
 The 5G infrastructure enables the communication between the connected vehicles and the cloud back-end. Based on the 5G standard discription, two component layers are structured as *control plane* and *user plane* which represents communication with cloud back-end and communication with the connected vehicle respectively.
 
 
@@ -219,7 +327,7 @@ The 5G infrastructure enables the communication between the connected vehicles a
 |5.|Depends on the vendors and the products|
 
 
-## **eNodeB (BBU)** concept:
+## **eNodeB (Baseband Unit) (BBU)** concept:
 
 ID| Property|
   |------|------|
@@ -229,7 +337,7 @@ ID| Property|
 |4.|There can be multiple instances|
 |5.|Depends on the vendors and the products|
 
-## **eNodeB (RRU)** concept:
+## **eNodeB (Remote Radio Units) (RRU)** concept:
 
 ID| Property|
   |------|------|
@@ -240,7 +348,7 @@ ID| Property|
 |5.|Depends on the vendors and the products|
 
 
-## 3. Cloud back-end
+# **3. Cloud back-end**
 
 The cloud back-end provides service components to the connected vehicle by making sure a reliable and safe functionality according to the pre-defiened operation. Just like the In-vehicle platform, the cloud back-end is composed of multiple layers: 
 **Core Layer**: the core layer fuctions as
