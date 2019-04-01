@@ -13,7 +13,8 @@
 
 ![](EclipsKuksaEcosystem.png)
 
-### *Figure 1. Eclipse Kuksa Ecosystem.*
+*Figure 1. Eclipse Kuksa Ecosystem.*
+
 *(source:https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail)*
 
 
@@ -44,7 +45,7 @@ The APPSTACLE environment is created to provide addon services to the connected 
 
 <img src="kuksaComponents.png" width="750" height="300" />
 
-### *Figure 2. Eclipse base Open source solutions to inreach kuksa components*
+*Figure 2. Eclipse base Open source solutions to inreach kuksa components*
 
 *(source:https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail)*
 
@@ -64,7 +65,7 @@ Automotive protocols are classified by the Society of Automotive Engineers (SAE)
 
 ![](AutomotiveNetwork.png)
 
-   ### Firugre 3. Automotive Network.
+   Firugre 3. Automotive Network.
 
 
 
@@ -112,7 +113,8 @@ These types along with their interactions are demonstrated in <span style="color
 
 ![](V2XCommunicationType.png)
 
-### *Figure 4. V2X communication types*
+
+*Figure 4. V2X communication types*
 
 The units supporting V2X communication are:
 
@@ -179,7 +181,8 @@ Units (ECUs) in the automotive domain. In order to separate the development proc
 
 ![Autosar Layer Models](AutosarLayerModel.png)
 
-### *Figure 4. Autosar Layers*
+
+*Figure 4. Autosar Layers*
 
 The top layer is formed by the application software. It is divided into software components, each of which realizes a part of the application and can consume and provide data via so-called ports. Any communication that does not take place via port connections is forbidden. A port is classified via a port interface (here referred to as interface). Two ports can only be connected to each other if both ports use compatible interfaces.
 Two important communication paradigms, that are selected by interfaces, are client-server and
@@ -680,4 +683,4 @@ ID| Property|
 
 ![The general system architecture](CloudeArchitecture.png)
            
-### *Figure 5. The picture below summurizes the concepts discussed above.*
+*Figure 5. The picture below summurizes the concepts discussed above.*
