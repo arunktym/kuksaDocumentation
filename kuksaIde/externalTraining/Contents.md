@@ -1,41 +1,43 @@
 # Contents
 
-## 1. Kuksa App IDE
+## Introduction
+    1. Introduction To Kuksa..................................................1
 
-    1.1 Getting Started with the App IDE.........................................................1
-       1.1.1 Required System Configuration.......................................................2
-       1.1.2 How to set up the IDE...............................................................3
-       1.1.3 Writing your first Kuksa In-Vehicle App.............................................4
-       1.1.4 Writing your first Kuksa Cloud App..................................................5
-       1.1.5 Testing your Apps...................................................................6
-       1.1.6 Deploying your apps.................................................................7
-       1.1.7Install your In-Vehicle App in your car (see In-Vehicle platform Getting Started)....8
-       1.1.8Install your Cloud App in your Cloud (see Cloud platform Getting Started)............9
-    1.2 Some Kuksa App examples.................................................................10
+## Architecture
 
-## 2. Kuksa In-Vehicle platform
+## 1. In-Vehicle Platform  
 
-    2.1 Getting started with the In-Vehicle platform............................................11
-        2.1.1 Required System Configuration (HW/SW).............................................12
-        2.1.2 Set up the platform...............................................................13
-            using a RPi
-            using XXX?
-        2.1.3 Connect the platform to a Kuksa portal............................................14
-        2.1.4 Search for an In-Vehicle App......................................................15
-        2.1.5 Install an In-Vehicle App.........................................................16
-        2.1.6 Test the In-Vehicle App...........................................................17
-    2.2 Configure the In-Vehicle platform.......................................................18
-    2.3 Overview of the In-Vehicle platform and its architecture................................19
-    2.4 Overview of the Kuksa In-Vehicle API....................................................20
+    1.1 Core Layer.............................................................1
+        1.1.1 API / Binding Layer..............................................1
+        1.1.2 Application Layer................................................1
+        1.1.3 In-vehicle connectivity concept..................................2
+        1.1.4 Ex-vehicle connectivity concept..................................2
+        1.1.5 App Runtime concept..............................................2
+        1.1.6 Automotive API concept...........................................3
+        1.1.7 Apps concept.....................................................3
+        1.1.8 Device Management Client concept.................................4
+        1.1.9 Operating System (OS) concept....................................4
 
-## 3. Kuksa Cloud Platform
+##  2. 5G-Infrastructure
 
-    3.1 Getting started with the Cloud platform.................................................21
-        3.1.1 Required System Configuration.....................................................22
-        3.1.2 Installing and testing the Cloud platform.........................................23
-        3.1.3 Installing a Cloud App and its In-Vehicle App.....................................24
-        3.1.4 Testing the Cloud App.............................................................25
-    3.2 Configuring the Cloud platform..........................................................26
-    3.3 Overview of the Cloud platform and its architecture.....................................27
-    3.4 Overview of the Kuksa Cloud API.........................................................28
-    3.5 Marketplace presentation and features...................................................29
+    2.1 Evolved Packet Core (EPC) concept......................................5
+        2.1.1 eNodeB (BBU) concept.............................................5
+        2.1.2 eNodeB (RRU) concept.............................................6
+
+## 3. Cloud back-end
+
+    3.1 Core Layer.............................................................6  
+    3.2 Data Analytic & Visualization Layer....................................7 
+    3.3 Application Layer......................................................7
+    3.3.1 Message Gateway concept..............................................8
+    3.3.2 Device Management Backend concept....................................8
+    3.3.3 Report Generation concept............................................9
+    3.3.4 Marketplace Backend concept..........................................9
+    3.3.5 Visualization concept................................................10
+    3.3.6 Marketplace Frontend concept.........................................11
+    3.3.7 Data Management concept..............................................12
+    3.3.8 Identity Management concept..........................................13
+    3.3.9 Device Representation concept........................................14
+    3.3.10 Big Data Analysis concept...........................................15
+    3.3.11 Core Services concept...............................................16
+    3.3.12 Domain-specific Services concept....................................17
