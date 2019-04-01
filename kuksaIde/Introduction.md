@@ -15,9 +15,15 @@ The development of software-intensive automotive systems by the Origional Equipm
     * Cosmic 18.10
     * Bionic 10.04 (LTS)
     * Xenial 16.04 (LTS)
+<<<<<<< HEAD
 * Docker CE is supported on ```x86_64 (or amd64), armhf, arm64, s390x``` (IBM Z), and ```ppc64le``` (IBM Power) architectures.
 * Uninstall older Docer version using: 
    ```$ sudo apt-get remove docker docker-engine docker.io containerd runc``` 
+=======
+* Docker CE is supported on *x86_64* (or *amd64*), *armhf*, *arm64*, *s390x* (IBM Z), and *ppc64le* (IBM Power) architectures.
+* Uninstall older Docer version using: 
+   *   <span style="background-color:grey"> $ sudo apt-get remove docker docker-engine <span>docker.i</span>o containerd runc </span> 
+>>>>>>> 09aa9717199cc00ec83e4609f336e20712585ccb
 * The supported storage drives for Docker CE on Ubuntu are : *overlay2*, *aufs* and *btrfs*.
 * Depending on the needs, Docker CE can be installed in different ways: 
     * For ease installation and upgrade task (Recomended) use [set up Docker's repositories](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-from-a-package).
@@ -26,6 +32,7 @@ The development of software-intensive automotive systems by the Origional Equipm
   
   ### Install using the repository
   Set up the Docker repository by following the steps:
+<<<<<<< HEAD
   1. Update the <span style="color:lightblue">apt</span> pakage index    
           ```$ sudo apt-get update```
 
@@ -81,6 +88,21 @@ To verify the fingerprint key: use the last 8 characters, in this case (D38B4796
 4. You are asked to authorize Docker.app with your system password during the install process. Privileged access is needed to install networking components, links to the Docker apps, and manage the Hyper-V VMs.![Enabling Hype-V container feature](Enabling Container features.png)
 
 5. Click Finish on the setup complete dialog to launch Docker.
+=======
+  1. Update the <span style="color:lightblue">apt</span> pakage index
+    
+        <span style="background-color:grey"> $ sudo apt-get update</span>
+2. Coppy and paste the following line of command to allow <span style="color:lightblue">apt</span> to use repository over HTTPS:
+   
+   <span style="background-color:grey">$ sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent    software-properties-common </span>
+3. Double-click [Docker](https://docs.docker.com/docker-for-windows/install/) Desktop for Windows Installer.exe to run the installer. The downloaded installer (Docker Desktop Installer.exe), can be found from (download.docker.com). It usually downloads to the Downloads folder, or else, run it from the recent downloads bar at the bottom of the web browser (if Google Chrome is used).
+
+4. Follow the install wizard to accept the license, authorize the installer, and proceed with the install. ![A test image](DockerImage.png)
+
+5. You are asked to authorize Docker.app with your system password during the install process. Privileged access is needed to install networking components, links to the Docker apps, and manage the Hyper-V VMs.![Enabling Hype-V container feature](Enabling Container features.png)
+
+6. Click Finish on the setup complete dialog to launch Docker.
+>>>>>>> 09aa9717199cc00ec83e4609f336e20712585ccb
 
 
 As Eclipse Che is a top-level project in the cloud development Eclipse Cloud Development (ECD), the Che assembly needs to be identified. Therefore, Che assembly is either .war or a Tomcat assembly (https://www.eclipse.org/che/docs/che-6/assemblies.html). However, ***missing*** 
