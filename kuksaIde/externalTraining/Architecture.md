@@ -1,3 +1,22 @@
+# Eclipse Kuksa Ecosystem
+
+### **Eclipse Kuksa**
+|Kuksa IDE|
+|---------|
+|Based on Eclipse Che
+|Allows Cloud and In-Vehicle Application development
+|Platform independent
+|Shared workspaces
+|Almost configuration free
+|Docker-based: VPN planned to allow remote / network independent cross compilation|
+
+
+![](EclipsKuksaEcosystem.png)
+
+### *Figure 1. Eclipse Kuksa Ecosystem.*
+*(source:https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail)*
+
+
 # Architecture
 The overall platform of the security-relevant aspects of the APPSTACLE environment architecture is divided in to three building blocks:
    > 1. In-vehicle platform,
@@ -25,7 +44,7 @@ The APPSTACLE environment is created to provide addon services to the connected 
 
 <img src="kuksaComponents.png" width="750" height="300" />
 
-### *Figure 1. Eclipse base Open source solutions to inreach kuksa components*
+### *Figure 2. Eclipse base Open source solutions to inreach kuksa components*
 
 *(source:https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail)*
 
@@ -41,12 +60,11 @@ the APPSTACLE platform.
 
 ## Protocols
 
-Automotive protocols are classified by the Society of Automotive Engineers (SAE) into four categories according to the transmission rate and their role in the automotive architecture. Specifically, Class A defines the protocols that are used for convenience systems (e.g. lighting, windows, seatcontrols) and require inexpensive, low-speed communication. Class B defines the protocols supporting instrument cluster or vehicle speed communication and require medium-speed communication. Furthermore, Class C is defined for real-time control ECUs such as the engine, braking and steer-
-by-wire and require high-speed communication. Finally, telematics systems usually require higher communication speed for multimedia (audio / video) and navigation, and therefore SAE defined the additional Class D communications. All four protocol Class categories are illustrated in <span style="color:lightblue">Table 1</span> along with the protocols that belong to each category and are used for in-vehicle communication in terms of their characteristics.
+Automotive protocols are classified by the Society of Automotive Engineers (SAE) into four categories according to the transmission rate and their role in the automotive architecture. Specifically, Class A defines the protocols that are used for convenience systems (e.g. lighting, windows, seatcontrols) and require inexpensive, low-speed communication. Class B defines the protocols supporting instrument cluster or vehicle speed communication and require medium-speed communication. Furthermore, Class C is defined for real-time control ECUs such as the engine, braking and steer-by-wire and require high-speed communication. Finally, telematics systems usually require higher communication speed for multimedia (audio / video) and navigation, and therefore SAE defined the additional Class D communications. All four protocol Class categories are illustrated in <span style="color:lightblue">Table 1</span> along with the protocols that belong to each category and are used for in-vehicle communication in terms of their characteristics.
 
 ![](AutomotiveNetwork.png)
 
-   ### Firugre 2. Automotive Network.
+   ### Firugre 3. Automotive Network.
 
 
 
@@ -62,7 +80,7 @@ by-wire and require high-speed communication. Finally, telematics systems usuall
 Modern automotive embedded systems consist of several subsystems, which are comprised of one
 or several Electronic Control Units (ECUs). In turn, the ECUs are made up of a micro-controller
 and a set of sensors and actuators. They are able to communicate through the transmission of
-electronic or optical signals through a dedicated communication unit. The subsystems that rely on network communication in automotive systems are divided into five main categories: power train, chassis, body, HMI, and telematics (illustrated in <span style="color:lightblue">Figure 2</span>). Each subsystem uses a different protocol to communicate, which is selected based on the architectural requirements and the subsystem functionality. Specifically, the powertrain domain is related to the systems that participate in the longitudinal propulsion of the vehicle,including engine, transmission and all subsidiary components. This domain is supported by a dedicated subsystem called Drive CAN using the Controller Area Network (CAN) for data exchange. The chassis domain refers to the four wheels and their relative position and movement; in this domain the systems are mainly steering and braking. In this subsystem category we find two protocols that are used for high-critical communication, namely CAN and FlexRay, as well as the Local Interconnect Network (LIN) for the lower critical functionalities (e.g. door locking, window raising / lowering). According to the EAST-EEA 1 project definition the body domain includes the entities that do not belong to the vehicle dynamics (i.e., being those that support the car’s user) such as airbags, wipers, lighting, etc. Today’s cars sometimes use two CAN buses (peripheral CAN and body CAN) which interconnect the ECUs of the comfort domain. The telematics domain includes the equipment allowing information exchange between electronic systems and the driver (displays and switches). Such interactions are possible through the infotainment subsystem that is supported by the MOST protocol. Finally additional peripheral systems (e.g.,cameras) allow the in-vehicle system to monitor and extract information from its physical environment through the use of Automotive Ethernet technologies. All the aforementioned systems are able to exchange data through a central gateway (<span style="color:lightblue">Figure 2</span>) that is able to map (through packet encapsulation) or forward messages from one subsystem to another.
+electronic or optical signals through a dedicated communication unit. The subsystems that rely on network communication in automotive systems are divided into five main categories: power train, chassis, body, HMI, and telematics (illustrated in <span style="color:lightblue">Figure 3</span>). Each subsystem uses a different protocol to communicate, which is selected based on the architectural requirements and the subsystem functionality. Specifically, the powertrain domain is related to the systems that participate in the longitudinal propulsion of the vehicle,including engine, transmission and all subsidiary components. This domain is supported by a dedicated subsystem called Drive CAN using the Controller Area Network (CAN) for data exchange. The chassis domain refers to the four wheels and their relative position and movement; in this domain the systems are mainly steering and braking. In this subsystem category we find two protocols that are used for high-critical communication, namely CAN and FlexRay, as well as the Local Interconnect Network (LIN) for the lower critical functionalities (e.g. door locking, window raising / lowering). According to the EAST-EEA 1 project definition the body domain includes the entities that do not belong to the vehicle dynamics (i.e., being those that support the car’s user) such as airbags, wipers, lighting, etc. Today’s cars sometimes use two CAN buses (peripheral CAN and body CAN) which interconnect the ECUs of the comfort domain. The telematics domain includes the equipment allowing information exchange between electronic systems and the driver (displays and switches). Such interactions are possible through the infotainment subsystem that is supported by the MOST protocol. Finally additional peripheral systems (e.g.,cameras) allow the in-vehicle system to monitor and extract information from its physical environment through the use of Automotive Ethernet technologies. All the aforementioned systems are able to exchange data through a central gateway (<span style="color:lightblue">Figure 3</span>) that is able to map (through packet encapsulation) or forward messages from one subsystem to another.
 
 
 
@@ -90,11 +108,11 @@ The technology evolution in the automotive vehicles contributed to the demands f
 • Vehicle-2-Network (V2N) / Network-2-Vehicle (N2V), 5) Infrastructure-2-Network (I2N) /
 Network-2-Infrastructure (N2I).
 
-These types along with their interactions are demonstrated in <span style="color:lightblue">Figure 3</span>.
+These types along with their interactions are demonstrated in <span style="color:lightblue">Figure 4</span>.
 
 ![](V2XCommunicationType.png)
 
-### *Figure 3. V2X communication types*
+### *Figure 4. V2X communication types*
 
 The units supporting V2X communication are:
 
@@ -157,7 +175,7 @@ The Application Programming Interface (API) for vehicles are introduced and disc
 
 AUTomotive Open System ARchitecture (AUTOSAR) is a cooperation between car manufacturers,
 OEMs and tool manufacturers and defines a software development paradigm for Electronic Control
-Units (ECUs) in the automotive domain. In order to separate the development process of application software from the chosen ECU hardware platform, AUTOSAR is introducing a layer model with the three layers Application Software, Runtime Environment and Basic Software (illustrated IN <span style="color:lightblue">Figure 4</span>).
+Units (ECUs) in the automotive domain. In order to separate the development process of application software from the chosen ECU hardware platform, AUTOSAR is introducing a layer model with the three layers Application Software, Runtime Environment and Basic Software (illustrated IN <span style="color:lightblue">Figure 5</span>).
 
 ![Autosar Layer Models](AutosarLayerModel.png)
 
@@ -304,6 +322,12 @@ which forms the middle layer. The RTE specification document defines a schema fo
 
 # **2. 5G-Infrastructure**
 The 5G infrastructure enables the communication between the connected vehicles and the cloud back-end. Based on the 5G standard discription, two component layers are structured as *control plane* and *user plane* which represents communication with cloud back-end and communication with the connected vehicle respectively.
+
+5G is the next generation of mobile communication technology. It is expected to be defined by theend of this decade and to be widely deployed in the early years of the next decade. As opposed to earlier 3G and 4G technologies, 3GPP conceptualized 5G to be more than another mobile broadband connectivity, covering a variety of use-cases and industries.
+5G was initially based on the conceptual composition as well as evolution of cellular technologies. This is because the different technologies have communication requirements, that are focused in a local (LAN) or wide area network (WAN) communication.
+
+In particular, IEEE’s 802.11p has been developed to support different types of wireless communications (e.g. PAN, LAN), but since it is based on CSMA/CA its performance degrades quickly as network load increases. This happens because a high number of transmitting stations will increase the number of collisions on the communication medium. Additionally, since it is was designed for short-range transmissions (transmission range up to 1km), many vendors introduce a multi-hop functionality to increase the transmission range. An example of multi-hop functionality is introduced in the European Cooperative Intelligent Transport System (C-ITS) protocol stack named as GeoNetworking. Furthermore, another technology that could not support as standalone broadband (e.g. WAN) communications is LTE. The main drawback of this technology is that every transmitted packet must traverse the infrastructure, meaning that each infrastructure failure will have a strong impact on connectivity of the entire network. Furthermore, even though broadband connections can be supported in LTE, scenarios where the infrastructure is not available due to outof-coverage are also quite probable. Finally, since LTE was designed to use radio resources in order to allow broadband communication, its extension in V2X connectivity where smaller data packets and higher bandwidth are required is suboptimal in terms of consumed resources still remains a great
+challenge.
 
 
 ## **Evolved Packet Core (EPC)** concept:
@@ -656,4 +680,4 @@ ID| Property|
 
 ![The general system architecture](CloudeArchitecture.png)
            
-**The picture below summurizes the concepts discussed above.**
+### *Figure 5. The picture below summurizes the concepts discussed above.*
