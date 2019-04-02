@@ -9,6 +9,6 @@ A documentation repository containing implementation to setup Eclipse Kuksa che 
    |Current  |6.10|
    |Plan     |7.0|
 
-> The Kuksa-IDE Developers guidance and the neccessary steps for building and running Eclipse Che kuksa instance are explained in this [link](https://kuksa-che-ide.readthedocs.io/en/latest/).
+The Kuksa-IDE Developers guidance and the neccessary steps for building and running Eclipse Che kuksa instance are explained in this [link](https://kuksa-che-ide.readthedocs.io/en/latest/).
 
-> *For the neccessary <span style="color:lightblue">prerequisite</span> and <span style="color:lightblue">Eclipse Che Kuksa setup</span>, please visit the [here](https://github.com/eclipse/kuksa.ide)*.
+ *For the neccessary <span style="color:lightblue">prerequisites</span> and <span style="color:lightblue">Eclipse Che Kuksa setup</span>, please visit the [here](https://github.com/eclipse/kuksa.ide)*.
