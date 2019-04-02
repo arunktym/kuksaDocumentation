@@ -684,4 +684,4 @@ ID| Property|
 
 ![The general system architecture](CloudeArchitecture.png)
            
-*Figure 5. The picture below summurizes the concepts discussed above.*
+*Figure 5. The above picture summurizes the the architectural concepts discussed so far.*
