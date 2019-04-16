@@ -52,21 +52,9 @@
     3.3.11 Core Services concept...............................................16
     3.3.12 Domain-specific Services concept....................................17
 
-
-# 1. Introduction To Kuksa
-
-Because today's software-intensive automotive systems are still developed in silos by each car manufacturer or OEM in-house, long-term challenges in the industry are yet unresolved. Establishing a standard for car-to-cloud scenarios significantly improves comprehensive domain-related development activities and opens the market to external applications, service provider, and the use of open source software wherever possible without compromising security. Connectivity, OTA maintenance, automated driving, electric mobility, and related approaches increasingly demand technical innovations applicable across automotive players.
-
-The open and secure Eclipse Kuksa project will contain a cloud platform that interconnects a wide range of vehicles to the cloud via in-car and internet connections. This platform will be supported by an integrated open source software development environment including technologies to cope especially with software challenges for vehicles designed in the IoT, Cloud, and digital era.
-
-This ecosystem will provide a comprehensive environment across various frameworks and technologies for *the in-vehicle platform*, *the cloud platform*, and *an app development IDE* - that is, the complete tooling stack for the connected vehicle domain [see Figure 1 below](). Essential to this environment will be the capabilities for collecting, storing, and analysing vehicle data in the cloud as well as the transmission of diverse information such as cloud calculation results (e.g. improved routing), software maintenance updates or even complete new applications. While many IoT solutions exist in the Eclipse IoT ecosystem, Eclipse Kuksa combines the necessary existing technologies and fills the gaps for the specific requirements of the connected embedded real-time nature of the automotive domain.[see here for more details](https://www.eclipse.org/kuksa/about/). 
-
-![](EKuksa.png)
-(Source: https://www.eclipse.org/kuksa/about/EKuksa.png )
-  
 ># 2. Eclipse Kuksa Ecosystem
 
-### **2.1 Eclipse Kuksa**
+## 2.1 Eclipse Kuksa
 |Kuksa IDE|
 |---------|
 |Based on Eclipse Che
@@ -77,10 +65,11 @@ This ecosystem will provide a comprehensive environment across various framework
 |Docker-based: VPN planned to allow remote / network independent cross compilation|
 
 
-![](EclipsKuksaEcosystem.png)
+![EclipsKuksaEcosystem](EclipsKuksaEcosystem.png)
 
 *Figure 1. Eclipse Kuksa Ecosystem.*
-(source: [click here](https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail))
+
+*(source:https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail)*
 
 
 > # 3. Architecture
@@ -92,7 +81,7 @@ The overall platform of the security-relevant aspects of the APPSTACLE environme
    
 The above mentioned building blocks comprises a set of components which communicates between components of the same building block and/or components of different blocks.
 
-## 3. 1. In-Vehicle Platform
+> # **3. 1. In-Vehicle Platform**
 
 The APPSTACLE environment is created to provide addon services to the connected vehicles. This provides a complite functionality of the vehicles through deploying the *Apps* on the in-vehicle platform. Therefore, three layers of components are required to enable this purpose:
 
@@ -119,7 +108,7 @@ The APPSTACLE environment is created to provide addon services to the connected 
 
 The in-vehicle platform addtionally provides means for rertrieving telemetry data collected by the vehicle itself as well as a human machine interface (HMI ) for user interaction.
 
-# 3.2 **In-vehicle connectivity** :
+> # 3.2 **In-vehicle connectivity** :
 
 This section provides an overview of the communication protocols that are currently used in the existing automotive architectures as well as their interconnections in the Electrical / Electronic (E/E) in-vehicle architecture.
 The scope of these protocols defines the in-vehicle communication interfaces for
@@ -142,7 +131,7 @@ Automotive protocols are classified by the Society of Automotive Engineers (SAE)
  |Used in Application domains Message transmission Access control Maximum Data Rate Protocol Class | Subnets Body Soft Synchronous Polling 20 kbps A|Soft real-time Powertrain, Chassis Asynchronous CSMA/CA 1 Mbps BC| Soft real-time a a CSMA/CA 10 Mbps D|Hard real-time Chassis, Powertrain Synchronous and Asynchronous TDMA 10 Mbps D | Multimedia Multimedia and Telematics Synchronous and Asynchronous CSMA/CA 24Mbps D| Multimedia Telematics and active safety Synchronous and Asynchronous CSMA/CD 100Mbps D| 
  
 
-> ## 4. Architectural Overview
+> # **4. Architectural Overview**
 
 Modern automotive embedded systems consist of several subsystems, which are comprised of one
 or several Electronic Control Units (ECUs). In turn, the ECUs are made up of a micro-controller
@@ -162,7 +151,7 @@ electronic or optical signals through a dedicated communication unit. The subsys
 ||• Depending on the chosen protocols: what components are communicating what information|
 ||• Development of software modules for handling data for each protocol|
 
-## **3.3 Ex-vehicle connectivity** concept:
+## 4.1 Ex-vehicle connectivity concept:
 
 The technology evolution in the automotive vehicles contributed to the demands for smarter mobility solutions. These solutions are focused on several types of V2X communication:
 
@@ -225,7 +214,7 @@ and already deployed in different locations. The following paragraphs start with
 ||• (Since Development Stage) Need manual configuration at the moment for 5G mm Radio.|
 
 
-## **3.4 App Runtime** concept:
+## 4.2 App Runtime concept:
 
 |ID| Property|
   |------|------|
@@ -235,11 +224,11 @@ and already deployed in different locations. The following paragraphs start with
 |4.|There is one APP Runtime per in-vehicle platform. It could be part of the operating system.|
 |5.|Initialisation / start up: The APP Runtime is started during the (secure) boot process. It can be configured by the OEM and the vehicle owner (details are left open in this document), e.g., to configure permissions ("the policy").|
 
-## **3.5 Automotive API** concept:
+## 4.3 Automotive API concept:
 
 The Application Programming Interface (API) for vehicles are introduced and discussed in here. The automotive API's try to achieve (a) merging the potentially very complex device and network structure of a car into a single virtual device and (b) hiding the differences between manufacturers, models and makes behind a common interface. On the other hand these interfaces strongly differ in their scope (data-subset or use-case), technological approach and creators.
 
-### 3.5.1 AUTOSAR
+### 4.3.1 AUTOSAR
 
 AUTomotive Open System ARchitecture (AUTOSAR) is a cooperation between car manufacturers,
 OEMs and tool manufacturers and defines a software development paradigm for Electronic Control
@@ -273,7 +262,7 @@ which forms the middle layer. The RTE specification document defines a schema fo
 |5.|Initialisation / start up: The "Automotive API" service is started during the (secure) boot process.|
 
 
-## **3.6 Apps** concept:
+## 4.4 Apps concept:
 
 |ID| Property|
   |------|------|
@@ -283,7 +272,7 @@ which forms the middle layer. The RTE specification document defines a schema fo
 |4.|There can be multiple APPs per in-vehicle platform.|
 |5.|Initialisation / start up: APPs are started by the APP Runtime. Configuration data depends on the APP / use case.|
 
-## **3.7 Device Management Client** concept:
+## 4.5 Device Management Client concept:
 
 |ID| Property|
   |------|------|
@@ -325,7 +314,7 @@ which forms the middle layer. The RTE specification document defines a schema fo
 ||– Address of DM at the desired cloud
 ||– Certificate|
 
-## **3.8 Operating System (OS)** concept:
+## 4.6 Operating System (OS) concept:
 
 |ID| Property|
   |------|------|
@@ -389,7 +378,7 @@ which forms the middle layer. The RTE specification document defines a schema fo
 ||• User credentials|
 
 
-> # **4. 5G-Infrastructure**
+> # **5. The 5G-Infrastructure**
 The 5G infrastructure enables the communication between the connected vehicles and the cloud back-end. Based on the 5G standard discription, two component layers are structured as *control plane* and *user plane* which represents communication with cloud back-end and communication with the connected vehicle respectively.
 
 5G is the next generation of mobile communication technology. It is expected to be defined by theend of this decade and to be widely deployed in the early years of the next decade. As opposed to earlier 3G and 4G technologies, 3GPP conceptualized 5G to be more than another mobile broadband connectivity, covering a variety of use-cases and industries.
@@ -399,7 +388,7 @@ In particular, IEEE’s 802.11p has been developed to support different types of
 challenge.
 
 
-## **4.1 Evolved Packet Core (EPC)** concept:
+## 5.1 Evolved Packet Core (EPC) concept:
 
 |ID| Property|
   |------|------|
@@ -420,7 +409,7 @@ challenge.
 |5.|Depends on the vendors and the products|
 
 
-## **4.1.1 eNodeB (Baseband Unit) (BBU)** concept:
+## 5.1.1 eNodeB (Baseband Unit) (BBU) concept:
 
 ID| Property|
   |------|------|
@@ -430,7 +419,7 @@ ID| Property|
 |4.|There can be multiple instances|
 |5.|Depends on the vendors and the products|
 
-## **4.1.2 eNodeB (Remote Radio Units) (RRU)** concept:
+## 5.1.2 eNodeB (Remote Radio Units) (RRU) concept:
 
 ID| Property|
   |------|------|
@@ -441,7 +430,7 @@ ID| Property|
 |5.|Depends on the vendors and the products|
 
 
-> # **5. Cloud back-end**
+> # **6. Cloud back-end**
 
 The cloud back-end provides service components to the connected vehicle by making sure a reliable and safe functionality according to the pre-defiened operation. Just like the In-vehicle platform, the cloud back-end is composed of multiple layers: 
 **Core Layer**: the core layer fuctions as
@@ -452,7 +441,7 @@ The cloud back-end provides service components to the connected vehicle by makin
 **Data Analytic & Visualization Layer**: this layer analyzis and visualizes the data transmitted by the vehicle based on the functionalities of the core layer.
 **Application Layer**: In general, applications that are deployed on in-vehicle platforms require a cloud back-end counterpart. Often, applications in the back-end are provided by third parties allowing vehicle owners to aquire certain functionalities. The market place is also accessible for developers and serivce providers to register and upload applications. The original equipment manufacturers (OEM s) has the access and controls on contents of the market place.
 
-## **5.1 Message Gateway** concept:
+## 6.1 Message Gateway concept:
 
 ID| Property|
   |------|------|
@@ -481,7 +470,7 @@ ID| Property|
 ||– Connection to other services, e.g, identity management, service bus, etc.|
 
 
-## **5.2 Device Management Backend** concept:
+## 6.2 Device Management Backend concept:
 
 ID| Property|
   |------|------|
@@ -506,7 +495,7 @@ ID| Property|
 ||• The device management resources are expected to be deployed into an existing cluster|
 
 
-## **5.3 Report Generation** concept:
+## 6.3 Report Generation concept:
 
 ID| Property|
   |------|------|
@@ -521,7 +510,7 @@ ID| Property|
 |5.|• The configuration for initialization is provided within deployment scripts
 ||• The device management resources are expected to be deployed into an existing cluster|
 
-## **5.4 Marketplace Backend** concept:
+## 6.4 Marketplace Backend concept:
 
 ID| Property|
   |------|------|
@@ -558,7 +547,7 @@ ID| Property|
 ||– Connection to other services, e.g, Identity Management|
 
 
-## **5.5 Visualization** concept:
+## 6.5 Visualization concept:
 
 ID| Property|
   |------|------|
@@ -578,7 +567,7 @@ ID| Property|
 ||– Layout information|
 
 
-## **5.6 Marketplace Frontend** concept:
+## 6.6 Marketplace Frontend concept:
 
 ID| Property|
   |------|------|
@@ -620,7 +609,7 @@ ID| Property|
 ||– Connection to other services, e.g, Marketplace Backend|
 
 
-## **5.7 Data Management** concept:
+## 6.7 Data Management concept:
 
 ID| Property|
   |------|------|
@@ -652,7 +641,7 @@ ID| Property|
 ||– Connection to other services, e.g, Message Gateway and Big Data Analysis|
 
 
-## **5.8 Identity Management** concept:
+## 6.8 Identity Management concept:
 
 ID| Property|
   |------|------|
@@ -673,7 +662,7 @@ ID| Property|
 ||• Regarding the authentication and authorization of vehicles and marketplace users, specific mechanisms have to be selected and configured.|
 
 
-## **5.9 Device Representation** concept:
+## 6.9 Device Representation concept:
 
 ID| Property|
   |------|------|
@@ -689,7 +678,7 @@ ID| Property|
 ||• A digital twin is created for each connected vehicle added to the environment|
 
 
-## **5.10 Big Data Analysis** concept:
+## 6.10 Big Data Analysis concept:
 
 ID| Property|
   |------|------|
@@ -707,7 +696,7 @@ ID| Property|
 ||– Ports|
 
 
-## **5.11 Core Services** concept:
+## 6.11 Core Services concept:
 
 ID| Property|
   |------|------|
@@ -726,7 +715,7 @@ ID| Property|
 ||– Ports|
 
 
-## **5.12 Domain-specific Services** concept:
+## 6.12 Domain-specific Services concept:
 
 ID| Property|
   |------|------|
@@ -751,11 +740,11 @@ ID| Property|
            
 *Figure 5. The above picture summurizes the the architectural concepts discussed so far.*
 
-# **6. Kuksa-IDE Building & Deploying**
+# **7. Kuksa-IDE Building & Deploying**
 
 A documentation repository containing implementation to setup Eclipse Kuksa che instance is available in [here](https://github.com/eclipse/kuksa.ide). Which also contains the Automotive Grade Linux (AGL) stack with Yocto support. AGL represents an automotive specific Linux distribution specifically designed as open software stack for connected car scenarios. An example on how to use the Kuksa-IDE for developing AGL applications and services running on a Rover can be found in [here](https://wiki.eclipse.org/APP4MC/Rover).
 
-## 6.1 Version
+## 7.1 Version
 ### *Table 6.1 Eclipse Che Kuksa instance version*
    |Available|Version number|
    |---------|--------------|
@@ -764,9 +753,9 @@ A documentation repository containing implementation to setup Eclipse Kuksa che 
 
 The Kuksa-IDE Developers guidance and the neccessary steps for building and running Eclipse Che kuksa instance are explained in this [link](https://kuksa-che-ide.readthedocs.io/en/latest/).
 
- *For the neccessary <span style="color:lightblue">prerequisites</span> and <span style="color:lightblue">Eclipse Che Kuksa setup</span>, please visit the [here](https://github.com/eclipse/kuksa.ide)*.
+ *For the neccessary <span style="color:lightblue">prerequisites</span> and <span style="color:lightblue">Eclipse Che Kuksa setup</span>, please visit  [here](https://github.com/eclipse/kuksa.ide)*.
 
-## 6.2 IDE
+## 7.2 IDE
 
 The IDE provided under Eclipse Kuksa not only support the development of applications for the vehicle component, but also the creation of applications for the cloud. Users should be able to choose between two different workspaces and technology stacks that contain the preconfigured and embedded APIs as well as software libraries of the respective applications to be developed. This allows the car to be equipped with new functions and new services to be deployed in the cloud.
 
@@ -777,8 +766,11 @@ Kuksa also supports the simplified deployment of new applications for both the c
 ![Kuksa_IDE screenshot](Kuksa_IDE.png)
 
 In order to make new applications applicable to a greater amount of vehicles, applications need to be centrally checked, managed, and organized with regard to various in-vehicle derivatives and variants in such a way that only vehicle-appropriate applications are accessible. Similar to a Smartphone App Store, it has to be possible to add new functions and applications to their vehicle or perform updates or upgrades. Therefore, standardized interfaces of the in-vehicle and cloud platforms are required and they must offer the most diverse and yet simple infrastructure for vehicle owners. Authentication methods, security concepts, variant management, and suitable data transmission technologies in combination with the publicly accessible ecosystem form mandatory components as well as the difference to existing solutions. [Click](https://www.eclipse.org/community/eclipse_newsletter/2018/july/kuksa.php) here to read more.
+> *7.2.1 Here are repository folders for [kuksa.apps](https://github.com/eclipse/kuksa.apps)*
+> 
+> *7.2.2 Getting started with [Kuksa appstore](https://github.com/eclipse/kuksa.cloud/tree/master/kuksa-appstore)*
 
-> # Cloud back-end
+> # 8. Cloud back-end
 
 The cloud back-end is the counterpart to the services provided by the in-vehicle platform. It offers basic services regarding connectivity, authentication, authorization, device update and data management. These services are realized by open source [Eclipse IoT](https://iot.eclipse.org/) technologies, which are tailored to the requirements of a connected vehicle platform. An abstract overview of the cloud components is given in the Figure below.
 
@@ -791,3 +783,16 @@ The large amount of collected data can either be processed by big data analysis 
 A device management component takes care of provisioning software updates to the vehicle, both in terms of the core system as well as adding or modifying vehicle functionality through apps. The former comprises so-called rollout management, which controls the distribution of the software to a large number of vehicles. This component is represented by [Eclipse hawkBit](https://www.eclipse.org/hawkbit/). Applications augmenting the functionality of the vehicles are provisioned by the vehicle manufacturers or external developers via an app store.
 
 A set of core services provide the access to the vehicles managed within the cloud back-end. In this regard, an authentication and authorization component ensures that malicious access by third-party services is prohibited. This involves all major components of the back-end infrastructure. To read more [click here](https://www.eclipse.org/community/eclipse_newsletter/2018/july/kuksa.php)
+
+> ## 8.1 Kuksa Cloud Deployment
+The scripts in this directory and it's subdirectories help to setup a deployment of the Kuksa cloud. These scripts assume a running Kubernetes cluster which can be configured using *kubectl*. More information regarding the parameters of the scripts can be found within the respective script file [here](https://github.com/eclipse/kuksa.cloud/tree/master/deployment).
+
+### Structure
+
+The deployment scripts are divided into the following parts:
+
+1. Eclipse hawkBit enables the deployment of the corresponding software update components, in particular the update server. Note that this step requires the installation of the command line tool kompose. [Here](http://kompose.io/) is the installation instructions.
+   
+2. Eclipse Hono enables the deployment of a messaging infrastructure.
+3.  Kubernetes provides functions for the Kubernetes deployment of the Kuksa cloud.
+4. Utils scripts that are included by other parts of the deployment infrastructure (e.g. handling static IP-addresses for the services). It is possible to set static IP-addresses and DNS entries for deployed services. For more details on that configuration see the *Readme. md* file in the *utils* directory.
