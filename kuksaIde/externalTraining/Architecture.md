@@ -27,7 +27,7 @@ The overall platform of the security-relevant aspects of the APPSTACLE environme
    
 The above mentioned building blocks comprises a set of components which communicates between components of the same building block and/or components of different blocks.
 
-## 3. 1. In-Vehicle Platform
+> # **3. 1. In-Vehicle Platform**
 
 The APPSTACLE environment is created to provide addon services to the connected vehicles. This provides a complite functionality of the vehicles through deploying the *Apps* on the in-vehicle platform. Therefore, three layers of components are required to enable this purpose:
 
@@ -54,7 +54,7 @@ The APPSTACLE environment is created to provide addon services to the connected 
 
 The in-vehicle platform addtionally provides means for rertrieving telemetry data collected by the vehicle itself as well as a human machine interface (HMI ) for user interaction.
 
-# 3.2 **In-vehicle connectivity** :
+> # 3.2 **In-vehicle connectivity** :
 
 This section provides an overview of the communication protocols that are currently used in the existing automotive architectures as well as their interconnections in the Electrical / Electronic (E/E) in-vehicle architecture.
 The scope of these protocols defines the in-vehicle communication interfaces for
