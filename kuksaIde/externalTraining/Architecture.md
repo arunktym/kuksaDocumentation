@@ -1,6 +1,6 @@
 ># 2. Eclipse Kuksa Ecosystem
 
-### **2.1 Eclipse Kuksa**
+## 2.1 Eclipse Kuksa
 |Kuksa IDE|
 |---------|
 |Based on Eclipse Che
@@ -11,7 +11,7 @@
 |Docker-based: VPN planned to allow remote / network independent cross compilation|
 
 
-![](EclipsKuksaEcosystem.png)
+![EclipsKuksaEcosystem](EclipsKuksaEcosystem.png)
 
 *Figure 1. Eclipse Kuksa Ecosystem.*
 
@@ -77,7 +77,7 @@ Automotive protocols are classified by the Society of Automotive Engineers (SAE)
  |Used in Application domains Message transmission Access control Maximum Data Rate Protocol Class | Subnets Body Soft Synchronous Polling 20 kbps A|Soft real-time Powertrain, Chassis Asynchronous CSMA/CA 1 Mbps BC| Soft real-time a a CSMA/CA 10 Mbps D|Hard real-time Chassis, Powertrain Synchronous and Asynchronous TDMA 10 Mbps D | Multimedia Multimedia and Telematics Synchronous and Asynchronous CSMA/CA 24Mbps D| Multimedia Telematics and active safety Synchronous and Asynchronous CSMA/CD 100Mbps D| 
  
 
-> ## 4. Architectural Overview
+> # **4. Architectural Overview**
 
 Modern automotive embedded systems consist of several subsystems, which are comprised of one
 or several Electronic Control Units (ECUs). In turn, the ECUs are made up of a micro-controller
@@ -97,7 +97,7 @@ electronic or optical signals through a dedicated communication unit. The subsys
 ||• Depending on the chosen protocols: what components are communicating what information|
 ||• Development of software modules for handling data for each protocol|
 
-## **3.3 Ex-vehicle connectivity** concept:
+## 4.1 Ex-vehicle connectivity concept:
 
 The technology evolution in the automotive vehicles contributed to the demands for smarter mobility solutions. These solutions are focused on several types of V2X communication:
 
@@ -160,7 +160,7 @@ and already deployed in different locations. The following paragraphs start with
 ||• (Since Development Stage) Need manual configuration at the moment for 5G mm Radio.|
 
 
-## **3.4 App Runtime** concept:
+## 4.2 App Runtime concept:
 
 |ID| Property|
   |------|------|
@@ -170,11 +170,11 @@ and already deployed in different locations. The following paragraphs start with
 |4.|There is one APP Runtime per in-vehicle platform. It could be part of the operating system.|
 |5.|Initialisation / start up: The APP Runtime is started during the (secure) boot process. It can be configured by the OEM and the vehicle owner (details are left open in this document), e.g., to configure permissions ("the policy").|
 
-## **3.5 Automotive API** concept:
+## 4.3 Automotive API concept:
 
 The Application Programming Interface (API) for vehicles are introduced and discussed in here. The automotive API's try to achieve (a) merging the potentially very complex device and network structure of a car into a single virtual device and (b) hiding the differences between manufacturers, models and makes behind a common interface. On the other hand these interfaces strongly differ in their scope (data-subset or use-case), technological approach and creators.
 
-### 3.5.1 AUTOSAR
+### 4.3.1 AUTOSAR
 
 AUTomotive Open System ARchitecture (AUTOSAR) is a cooperation between car manufacturers,
 OEMs and tool manufacturers and defines a software development paradigm for Electronic Control
@@ -208,7 +208,7 @@ which forms the middle layer. The RTE specification document defines a schema fo
 |5.|Initialisation / start up: The "Automotive API" service is started during the (secure) boot process.|
 
 
-## **3.6 Apps** concept:
+## 4.4 Apps concept:
 
 |ID| Property|
   |------|------|
@@ -218,7 +218,7 @@ which forms the middle layer. The RTE specification document defines a schema fo
 |4.|There can be multiple APPs per in-vehicle platform.|
 |5.|Initialisation / start up: APPs are started by the APP Runtime. Configuration data depends on the APP / use case.|
 
-## **3.7 Device Management Client** concept:
+## 4.5 Device Management Client concept:
 
 |ID| Property|
   |------|------|
@@ -260,7 +260,7 @@ which forms the middle layer. The RTE specification document defines a schema fo
 ||– Address of DM at the desired cloud
 ||– Certificate|
 
-## **3.8 Operating System (OS)** concept:
+## 4.6 Operating System (OS) concept:
 
 |ID| Property|
   |------|------|
@@ -324,7 +324,7 @@ which forms the middle layer. The RTE specification document defines a schema fo
 ||• User credentials|
 
 
-> # **4. 5G-Infrastructure**
+> # **5. The 5G-Infrastructure**
 The 5G infrastructure enables the communication between the connected vehicles and the cloud back-end. Based on the 5G standard discription, two component layers are structured as *control plane* and *user plane* which represents communication with cloud back-end and communication with the connected vehicle respectively.
 
 5G is the next generation of mobile communication technology. It is expected to be defined by theend of this decade and to be widely deployed in the early years of the next decade. As opposed to earlier 3G and 4G technologies, 3GPP conceptualized 5G to be more than another mobile broadband connectivity, covering a variety of use-cases and industries.
@@ -334,7 +334,7 @@ In particular, IEEE’s 802.11p has been developed to support different types of
 challenge.
 
 
-## **4.1 Evolved Packet Core (EPC)** concept:
+## 5.1 Evolved Packet Core (EPC) concept:
 
 |ID| Property|
   |------|------|
@@ -355,7 +355,7 @@ challenge.
 |5.|Depends on the vendors and the products|
 
 
-## **4.1.1 eNodeB (Baseband Unit) (BBU)** concept:
+## 5.1.1 eNodeB (Baseband Unit) (BBU) concept:
 
 ID| Property|
   |------|------|
@@ -365,7 +365,7 @@ ID| Property|
 |4.|There can be multiple instances|
 |5.|Depends on the vendors and the products|
 
-## **4.1.2 eNodeB (Remote Radio Units) (RRU)** concept:
+## 5.1.2 eNodeB (Remote Radio Units) (RRU) concept:
 
 ID| Property|
   |------|------|
@@ -376,7 +376,7 @@ ID| Property|
 |5.|Depends on the vendors and the products|
 
 
-> # **5. Cloud back-end**
+> # **6. Cloud back-end**
 
 The cloud back-end provides service components to the connected vehicle by making sure a reliable and safe functionality according to the pre-defiened operation. Just like the In-vehicle platform, the cloud back-end is composed of multiple layers: 
 **Core Layer**: the core layer fuctions as
@@ -387,7 +387,7 @@ The cloud back-end provides service components to the connected vehicle by makin
 **Data Analytic & Visualization Layer**: this layer analyzis and visualizes the data transmitted by the vehicle based on the functionalities of the core layer.
 **Application Layer**: In general, applications that are deployed on in-vehicle platforms require a cloud back-end counterpart. Often, applications in the back-end are provided by third parties allowing vehicle owners to aquire certain functionalities. The market place is also accessible for developers and serivce providers to register and upload applications. The original equipment manufacturers (OEM s) has the access and controls on contents of the market place.
 
-## **5.1 Message Gateway** concept:
+## 6.1 Message Gateway concept:
 
 ID| Property|
   |------|------|
@@ -416,7 +416,7 @@ ID| Property|
 ||– Connection to other services, e.g, identity management, service bus, etc.|
 
 
-## **5.2 Device Management Backend** concept:
+## 6.2 Device Management Backend concept:
 
 ID| Property|
   |------|------|
@@ -441,7 +441,7 @@ ID| Property|
 ||• The device management resources are expected to be deployed into an existing cluster|
 
 
-## **5.3 Report Generation** concept:
+## 6.3 Report Generation concept:
 
 ID| Property|
   |------|------|
@@ -456,7 +456,7 @@ ID| Property|
 |5.|• The configuration for initialization is provided within deployment scripts
 ||• The device management resources are expected to be deployed into an existing cluster|
 
-## **5.4 Marketplace Backend** concept:
+## 6.4 Marketplace Backend concept:
 
 ID| Property|
   |------|------|
@@ -493,7 +493,7 @@ ID| Property|
 ||– Connection to other services, e.g, Identity Management|
 
 
-## **5.5 Visualization** concept:
+## 6.5 Visualization concept:
 
 ID| Property|
   |------|------|
@@ -513,7 +513,7 @@ ID| Property|
 ||– Layout information|
 
 
-## **5.6 Marketplace Frontend** concept:
+## 6.6 Marketplace Frontend concept:
 
 ID| Property|
   |------|------|
@@ -555,7 +555,7 @@ ID| Property|
 ||– Connection to other services, e.g, Marketplace Backend|
 
 
-## **5.7 Data Management** concept:
+## 6.7 Data Management concept:
 
 ID| Property|
   |------|------|
@@ -587,7 +587,7 @@ ID| Property|
 ||– Connection to other services, e.g, Message Gateway and Big Data Analysis|
 
 
-## **5.8 Identity Management** concept:
+## 6.8 Identity Management concept:
 
 ID| Property|
   |------|------|
@@ -608,7 +608,7 @@ ID| Property|
 ||• Regarding the authentication and authorization of vehicles and marketplace users, specific mechanisms have to be selected and configured.|
 
 
-## **5.9 Device Representation** concept:
+## 6.9 Device Representation concept:
 
 ID| Property|
   |------|------|
@@ -624,7 +624,7 @@ ID| Property|
 ||• A digital twin is created for each connected vehicle added to the environment|
 
 
-## **5.10 Big Data Analysis** concept:
+## 6.10 Big Data Analysis concept:
 
 ID| Property|
   |------|------|
@@ -642,7 +642,7 @@ ID| Property|
 ||– Ports|
 
 
-## **5.11 Core Services** concept:
+## 6.11 Core Services concept:
 
 ID| Property|
   |------|------|
@@ -661,7 +661,7 @@ ID| Property|
 ||– Ports|
 
 
-## **5.12 Domain-specific Services** concept:
+## 6.12 Domain-specific Services concept:
 
 ID| Property|
   |------|------|
