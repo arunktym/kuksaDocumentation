@@ -4,10 +4,13 @@
 <img src="Appstacle.png" width="750" height="300" />
 
 
-
-
-
-
+        
+        
+        
+        
+        
+        
+<div style="page-break-after: always;"></div>
 
 
 
@@ -17,6 +20,13 @@
   |1. | Kirubel | 0.1 |28.03.2019| Nill | No remarks|
 
 
+         
+         
+         
+         
+         
+    
+<div style="page-break-after: always;"></div>
 
 
 
@@ -27,69 +37,71 @@
 # Contents
 
 ## Introduction
-    1. Introduction To Kuksa...................................................2
+    1. Introduction To Kuksa...................................................5
 
 
-## 2. Eclipse Kuksa Ecosystem  
+## 2. Eclipse Kuksa Ecosystem
 
-    2.1 Eclipse Kuksa..........................................................3
+    2.1 Eclipse Kuksa..........................................................6
 
 ## 3. Architecture
 
-    3.1 In-Vehicle platform....................................................5
-      3.1.1 Core Layer.........................................................5
-      3.1.2 API / Binding Layer................................................5
-      3.1.3 Application Layer..................................................5
-    3.2 In-vehicle connectivity................................................6
-      3.2.1 Protocols..........................................................6
+    3.1 In-Vehicle platform....................................................8
+      3.1.1 Core Layer.........................................................8
+      3.1.2 API / Binding Layer................................................8
+      3.1.3 Application Layer..................................................8
+    3.2 In-vehicle connectivity................................................9
+      3.2.1 Protocols..........................................................9
         
 
 ##  4. Architectural Overview
 
-    4.1 Ex-vehicle connectivity concept........................................8
-    4.2 App Runtime concept....................................................9
-    4.3 Automotive API concept................................................10
-      4.3.1 AUTOSAR...........................................................10
-    4.4 Apps concept..........................................................12
-    4.5 Device Management Client concept......................................12
-    4.6 Operating System (OS) concept.........................................14
+    4.1 Ex-vehicle connectivity concept.......................................11
+    4.2 App Runtime concept...................................................13
+    4.3 Automotive API concept................................................13
+      4.3.1 AUTOSAR...........................................................14
+    4.4 Apps concept..........................................................15
+    4.5 Device Management Client concept......................................15
+    4.6 Operating System (OS) concept.........................................17
 
 
 ## 5. The 5G-Infrastructure
 
-    5.1 Evolved Packet Core (EPC) concept.....................................16  
-      5.1.1 eNodeB (Baseband Unit) (BBU) concept..............................17
-      5.1.2 eNodeB (Remote Radio Units) (RRU) concept.........................17
+    5.1 Evolved Packet Core (EPC) concept.....................................20  
+      5.1.1 eNodeB (Baseband Unit) (BBU) concept..............................21
+      5.1.2 eNodeB (Remote Radio Units) (RRU) concept.........................21
       
 ## 6. Cloud back-end
 
-    6.1 Message Gateway concept...............................................18
-    6.2 Device Management Backend concept.....................................19
-    6.3 Report Generation concept.............................................20
-    6.4 Marketplace Backend concept...........................................20
-    6.5 Visualization concept.................................................21
-    6.6 Marketplace Frontend concept..........................................22
-    6.7 Data Management concept...............................................23
-    6.8 Identity Management concept...........................................24
-    6.9 Device Representation concept.........................................25
-    6.10 Big Data Analysis concept............................................25
-    6.11 Core Services concept................................................26
-    6.12 Domain-specific Services concept.....................................26
+    6.1 Message Gateway concept...............................................22
+    6.2 Device Management Backend concept.....................................23
+    6.3 Report Generation concept.............................................23
+    6.4 Marketplace Backend concept...........................................24
+    6.5 Visualization concept.................................................25
+    6.6 Marketplace Frontend concept..........................................26
+    6.7 Data Management concept...............................................27
+    6.8 Identity Management concept...........................................28
+    6.9 Device Representation concept.........................................29
+    6.10 Big Data Analysis concept............................................29
+    6.11 Core Services concept................................................30
+    6.12 Domain-specific Services concept.....................................30
 
 ## 7. Kuksa-IDE Building & Deploying
 
-    7.1 Version...............................................................28
-    7.2 IDE...................................................................29
-      7.2.1 kuksa.apps........................................................30
-      7.2.2 kuksa appstore....................................................30
+    7.1 Version...............................................................32
+    7.2 IDE...................................................................32
+      7.2.1 kuksa.apps........................................................34
+      7.2.2 kuksa appstore....................................................34
 
 ## 8. Cloud back-end
 
-    8.1 Kuksa Cloud Deployment................................................31
+    8.1 Kuksa Cloud Deployment................................................36
 
 
 
 
+
+<div style="page-break-after: always;"></div>
 
 
 
@@ -103,10 +115,12 @@ Because today's software-intensive automotive systems are still developed in sil
 
 The open and secure Eclipse Kuksa project will contain a cloud platform that interconnects a wide range of vehicles to the cloud via in-car and internet connections. This platform will be supported by an integrated open source software development environment including technologies to cope especially with software challenges for vehicles designed in the IoT, Cloud, and digital era.
 
-This ecosystem will provide a comprehensive environment across various frameworks and technologies for *the in-vehicle platform*, *the cloud platform*, and *an app development IDE* - that is, the complete tooling stack for the connected vehicle domain [see Figure 1 below](). Essential to this environment will be the capabilities for collecting, storing, and analysing vehicle data in the cloud as well as the transmission of diverse information such as cloud calculation results (e.g. improved routing), software maintenance updates or even complete new applications. While many IoT solutions exist in the Eclipse IoT ecosystem, Eclipse Kuksa combines the necessary existing technologies and fills the gaps for the specific requirements of the connected embedded real-time nature of the automotive domain.[see here for more details](https://www.eclipse.org/kuksa/about/). 
+This ecosystem will provide a comprehensive environment across various frameworks and technologies for *the in-vehicle platform*, *the cloud platform*, and *an app development IDE* - that is, the complete tooling stack for the connected vehicle domain see `Figure 1` below. Essential to this environment will be the capabilities for collecting, storing, and analysing vehicle data in the cloud as well as the transmission of diverse information such as cloud calculation results (e.g. improved routing), software maintenance updates or even complete new applications. While many IoT solutions exist in the Eclipse IoT ecosystem, Eclipse Kuksa combines the necessary existing technologies and fills the gaps for the specific requirements of the connected embedded real-time nature of the automotive domain.[see here for more details](https://www.eclipse.org/kuksa/about/). 
 
 ![](EKuksa.png)
-(Source: https://www.eclipse.org/kuksa/about/EKuksa.png )
+(Source: [(https://www.eclipse.org/kuksa/about/EKuksa.png)](https://www.eclipse.org/kuksa/about/EKuksa.png) )
+
+  *Figure 1. Kuksa in-vehicle platform, cloud platform, and app development IDE.*
 
 ># 2. Eclipse Kuksa Ecosystem
 
@@ -123,9 +137,14 @@ This ecosystem will provide a comprehensive environment across various framework
 
 ![EclipsKuksaEcosystem](EclipsKuksaEcosystem.png)
 
-*Figure 1. Eclipse Kuksa Ecosystem.*
+*Figure 2. Eclipse Kuksa Ecosystem.*
 
-*(source:https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail)*
+*(source:[https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail](https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail))*
+
+
+
+<div style="page-break-after: always;"></div>
+
 
 
 > # 3. Architecture
@@ -158,7 +177,7 @@ The APPSTACLE environment is created to provide addon services to the connected 
 
 *Figure 2. Eclipse base Open source solutions to inreach kuksa components*
 
-*(source:https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail)*
+*(source:[https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail](https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail))*
 
  
 
@@ -172,27 +191,31 @@ the APPSTACLE platform.
 
 ## 3.2.1 Protocols
 
-Automotive protocols are classified by the Society of Automotive Engineers (SAE) into four categories according to the transmission rate and their role in the automotive architecture. Specifically, Class A defines the protocols that are used for convenience systems (e.g. lighting, windows, seatcontrols) and require inexpensive, low-speed communication. Class B defines the protocols supporting instrument cluster or vehicle speed communication and require medium-speed communication. Furthermore, Class C is defined for real-time control ECUs such as the engine, braking and steer-by-wire and require high-speed communication. Finally, telematics systems usually require higher communication speed for multimedia (audio / video) and navigation, and therefore SAE defined the additional Class D communications. All four protocol Class categories are illustrated in <span style="color:lightblue">Table 1</span> along with the protocols that belong to each category and are used for in-vehicle communication in terms of their characteristics.
+Automotive protocols are classified by the Society of Automotive Engineers (SAE) into four categories according to the transmission rate and their role in the automotive architecture. Specifically, Class A defines the protocols that are used for convenience systems (*e.g. lighting, windows, seatcontrols*) and require inexpensive, low-speed communication. Class B defines the protocols supporting instrument cluster or vehicle speed communication and require medium-speed communication. Furthermore, Class C is defined for real-time control ECUs such as the engine, braking and steer-by-wire and require high-speed communication. Finally, telematics systems usually require higher communication speed for multimedia (audio / video) and navigation, and therefore SAE defined the additional Class D communications. All four protocol Class categories are illustrated in `Table 1` along with the protocols that belong to each category and are used for in-vehicle communication in terms of their characteristics.
 
-![](AutomotiveNetwork.png)
+![Automotive network](AutomotiveNetwork.png)
 
-   Firugre 3. Automotive Network.
+   Firugre 3. Overview of Automotive Network.
 
 
 
- ### *Table 1.: Characteristics of the communication protocols*
+ ### *Table 1: Characteristics of the communication protocols*
 
  |Bus|LIN|CAN|CAN FD|FlexRay|MOST|Automotive Ethernet|
  |---|----|----|----|----|----|----| 
  |Used in Application domains Message transmission Access control Maximum Data Rate Protocol Class | Subnets Body Soft Synchronous Polling 20 kbps A|Soft real-time Powertrain, Chassis Asynchronous CSMA/CA 1 Mbps BC| Soft real-time a a CSMA/CA 10 Mbps D|Hard real-time Chassis, Powertrain Synchronous and Asynchronous TDMA 10 Mbps D | Multimedia Multimedia and Telematics Synchronous and Asynchronous CSMA/CA 24Mbps D| Multimedia Telematics and active safety Synchronous and Asynchronous CSMA/CD 100Mbps D| 
  
 
+ <div style="page-break-after: always;"></div>
+
+
+
 > # **4. Architectural Overview**
 
 Modern automotive embedded systems consist of several subsystems, which are comprised of one
 or several Electronic Control Units (ECUs). In turn, the ECUs are made up of a micro-controller
 and a set of sensors and actuators. They are able to communicate through the transmission of
-electronic or optical signals through a dedicated communication unit. The subsystems that rely on network communication in automotive systems are divided into five main categories: power train, chassis, body, HMI, and telematics (illustrated in <span style="color:lightblue">Figure 3</span>). Each subsystem uses a different protocol to communicate, which is selected based on the architectural requirements and the subsystem functionality. Specifically, the powertrain domain is related to the systems that participate in the longitudinal propulsion of the vehicle,including engine, transmission and all subsidiary components. This domain is supported by a dedicated subsystem called Drive CAN using the Controller Area Network (CAN) for data exchange. The chassis domain refers to the four wheels and their relative position and movement; in this domain the systems are mainly steering and braking. In this subsystem category we find two protocols that are used for high-critical communication, namely CAN and FlexRay, as well as the Local Interconnect Network (LIN) for the lower critical functionalities (e.g. door locking, window raising / lowering). According to the EAST-EEA 1 project definition the body domain includes the entities that do not belong to the vehicle dynamics (i.e., being those that support the car’s user) such as airbags, wipers, lighting, etc. Today’s cars sometimes use two CAN buses (peripheral CAN and body CAN) which interconnect the ECUs of the comfort domain. The telematics domain includes the equipment allowing information exchange between electronic systems and the driver (displays and switches). Such interactions are possible through the infotainment subsystem that is supported by the MOST protocol. Finally additional peripheral systems (e.g.,cameras) allow the in-vehicle system to monitor and extract information from its physical environment through the use of Automotive Ethernet technologies. All the aforementioned systems are able to exchange data through a central gateway (<span style="color:lightblue">Figure 3</span>) that is able to map (through packet encapsulation) or forward messages from one subsystem to another.
+electronic or optical signals through a dedicated communication unit. The subsystems that rely on network communication in automotive systems are divided into five main categories: power train, chassis, body, HMI, and telematics (illustrated in `Figure 3`). Each subsystem uses a different protocol to communicate, which is selected based on the architectural requirements and the subsystem functionality. Specifically, the powertrain domain is related to the systems that participate in the longitudinal propulsion of the vehicle,including engine, transmission and all subsidiary components. This domain is supported by a dedicated subsystem called Drive CAN using the Controller Area Network (CAN) for data exchange. The chassis domain refers to the four wheels and their relative position and movement; in this domain the systems are mainly steering and braking. In this subsystem category we find two protocols that are used for high-critical communication, namely CAN and FlexRay, as well as the Local Interconnect Network (LIN) for the lower critical functionalities (e.g. door locking, window raising / lowering). According to the EAST-EEA 1 project definition the body domain includes the entities that do not belong to the vehicle dynamics (i.e., being those that support the car’s user) such as airbags, wipers, lighting, etc. Today’s cars sometimes use two CAN buses (peripheral CAN and body CAN) which interconnect the ECUs of the comfort domain. The telematics domain includes the equipment allowing information exchange between electronic systems and the driver (displays and switches). Such interactions are possible through the infotainment subsystem that is supported by the MOST protocol. Finally additional peripheral systems (e.g.,cameras) allow the in-vehicle system to monitor and extract information from its physical environment through the use of Automotive Ethernet technologies. All the aforementioned systems are able to exchange data through a central gateway (`Figure 3`) that is able to map (through packet encapsulation) or forward messages from one subsystem to another.
 
 
 
@@ -220,7 +243,7 @@ The technology evolution in the automotive vehicles contributed to the demands f
 • Vehicle-2-Network (V2N) / Network-2-Vehicle (N2V), 5) Infrastructure-2-Network (I2N) /
 Network-2-Infrastructure (N2I).
 
-These types along with their interactions are demonstrated in <span style="color:lightblue">Figure 4</span>.
+These types along with their interactions are demonstrated in `Figure 4`.
 
 ![](V2XCommunicationType.png)
 
@@ -257,7 +280,9 @@ terms of throughput and offers higher reliability, even though its maximal throu
 limited than 802.11ac (from 3 to 27 Mbps raw data rate). The reason behind this is that
 802.11p was designed particularly for for safety-related Vehicular Ad-hoc NETworks (VANET),
 including the V2V and V2I/I2V concepts. IEEE 802.11p technology is currently fully specified
-and already deployed in different locations. The following paragraphs start with a description of the scenarios supported by 802.11p communi-cation and cellular communication. This is followed by a description on both the 802.11p and 5G technologies. In the scope of this section we focus on these two technologies, because, to the best of our knowledge, they are considered as the leading candidates for V2X communication. ![For detail information](.Appstacle_deliverable_1.1.pdf)
+and already deployed in different locations. The following paragraphs start with a description of the scenarios supported by 802.11p communi-cation and cellular communication. This is followed by a description on both the 802.11p and 5G technologies. In the scope of this section we focus on these two technologies, because, to the best of our knowledge, they are considered as the leading candidates for V2X communication. For detail information, refer to `Deliverable: D 1.1 
+Specification of In-car Software Architecture for Car2X
+Applications`.
 
 |ID| Property|
   |------|------|
@@ -288,12 +313,12 @@ The Application Programming Interface (API) for vehicles are introduced and disc
 
 AUTomotive Open System ARchitecture (AUTOSAR) is a cooperation between car manufacturers,
 OEMs and tool manufacturers and defines a software development paradigm for Electronic Control
-Units (ECUs) in the automotive domain. In order to separate the development process of application software from the chosen ECU hardware platform, AUTOSAR is introducing a layer model with the three layers Application Software, Runtime Environment and Basic Software (illustrated IN <span style="color:lightblue">Figure 5</span>).
+Units (ECUs) in the automotive domain. In order to separate the development process of application software from the chosen ECU hardware platform, AUTOSAR is introducing a layer model with the three layers Application Software, Runtime Environment and Basic Software (illustrated IN `Figure 5`).
 
 ![Autosar Layer Models](AutosarLayerModel.png)
 
 
-*Figure 4. Autosar Layers*
+*Figure 5. Autosar Layers*
 
 The top layer is formed by the application software. It is divided into software components, each of which realizes a part of the application and can consume and provide data via so-called ports. Any communication that does not take place via port connections is forbidden. A port is classified via a port interface (here referred to as interface). Two ports can only be connected to each other if both ports use compatible interfaces.
 Two important communication paradigms, that are selected by interfaces, are client-server and
@@ -307,7 +332,9 @@ to other ECUs that are connected via network interfaces like CAN, LIN, Flexray, 
 
 All communication, whether between software components on the upper level or between software
 components and basic software on the lower level, is realized via the runtime environment (RTE),
-which forms the middle layer. The RTE specification document defines a schema for API functions (C, C++), which are usually generated by code generators of the AUTOSAR modeling tools according to the modeled communication between software components and basic software. All communication must take place via the (generated) API functions. Other communication is not permitted. Likewise, all communication interfaces must be defined at the time of development, which makes it impossible to dynamically extend the software architecture at runtime. ![For detail information](.Appstacle_deliverable_1.1.pdf)
+which forms the middle layer. The RTE specification document defines a schema for API functions (C, C++), which are usually generated by code generators of the AUTOSAR modeling tools according to the modeled communication between software components and basic software. All communication must take place via the (generated) API functions. Other communication is not permitted. Likewise, all communication interfaces must be defined at the time of development, which makes it impossible to dynamically extend the software architecture at runtime. For detail information, refer to `Deliverable: D 1.1
+Specification of In-car Software Architecture for Car2X
+Applications.`
 
 |ID| Property|
   |------|------|
@@ -349,7 +376,7 @@ which forms the middle layer. The RTE specification document defines a schema fo
 ||• Inventory Hardware/Software listings
 ||• Communication requests
 ||**Provide**
-||• Access to resources through OMA-DM Management Objects (http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html)
+||• Access to resources through OMA-DM Management Objects [http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html](http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html)
 || – Management access through LwM2M)
 ||• Push Service (for notifying in-vehicle Applications form the cloud)
 ||• Monitoring Service
@@ -434,6 +461,11 @@ which forms the middle layer. The RTE specification document defines a schema fo
 ||• User credentials|
 
 
+
+<div style="page-break-after: always;"></div>
+
+
+
 > # **5. The 5G-Infrastructure**
 The 5G infrastructure enables the communication between the connected vehicles and the cloud back-end. Based on the 5G standard discription, two component layers are structured as *control plane* and *user plane* which represents communication with cloud back-end and communication with the connected vehicle respectively.
 
@@ -484,6 +516,12 @@ ID| Property|
 |3.|Interacts with user equipment and BBUs|
 |4.|Multiple instances|
 |5.|Depends on the vendors and the products|
+
+
+
+<div style="page-break-after: always;"></div>
+
+
 
 
 > # **6. Cloud back-end**
@@ -794,7 +832,15 @@ ID| Property|
 
 ![The general system architecture](CloudeArchitecture.png)
            
-*Figure 5. The above picture summurizes the the architectural concepts discussed so far.*
+*Figure 6. The above picture summurizes the the architectural concepts discussed so far.*
+
+
+
+
+<div style="page-break-after: always;"></div>
+
+
+
 
 # **7. Kuksa-IDE Building & Deploying**
 
@@ -809,7 +855,7 @@ A documentation repository containing implementation to setup Eclipse Kuksa che 
 
 The Kuksa-IDE Developers guidance and the neccessary steps for building and running Eclipse Che kuksa instance are explained in this [link](https://kuksa-che-ide.readthedocs.io/en/latest/).
 
- *For the neccessary <span style="color:lightblue">prerequisites</span> and <span style="color:lightblue">Eclipse Che Kuksa setup</span>, please visit  [here](https://github.com/eclipse/kuksa.ide)*.
+ *For the neccessary `prerequisites` and `Eclipse Che Kuksa setup`, please visit  [here](https://github.com/eclipse/kuksa.ide)*.
 
 ## 7.2 IDE
 
@@ -821,16 +867,32 @@ Kuksa also supports the simplified deployment of new applications for both the c
 
 ![Kuksa_IDE screenshot](Kuksa_IDE.png)
 
+
+*Figure 7. Kuksa_IDE screenshot*
+
+
 In order to make new applications applicable to a greater amount of vehicles, applications need to be centrally checked, managed, and organized with regard to various in-vehicle derivatives and variants in such a way that only vehicle-appropriate applications are accessible. Similar to a Smartphone App Store, it has to be possible to add new functions and applications to their vehicle or perform updates or upgrades. Therefore, standardized interfaces of the in-vehicle and cloud platforms are required and they must offer the most diverse and yet simple infrastructure for vehicle owners. Authentication methods, security concepts, variant management, and suitable data transmission technologies in combination with the publicly accessible ecosystem form mandatory components as well as the difference to existing solutions. [Click](https://www.eclipse.org/community/eclipse_newsletter/2018/july/kuksa.php) here to read more.
 > *7.2.1 Here are repository folders for [kuksa.apps](https://github.com/eclipse/kuksa.apps)*
 > 
 > *7.2.2 Getting started with [Kuksa appstore](https://github.com/eclipse/kuksa.cloud/tree/master/kuksa-appstore)*
+
+
+
+
+
+<div style="page-break-after: always;"></div>
+
+
+
 
 > # 8. Cloud back-end
 
 The cloud back-end is the counterpart to the services provided by the in-vehicle platform. It offers basic services regarding connectivity, authentication, authorization, device update and data management. These services are realized by open source [Eclipse IoT](https://iot.eclipse.org/) technologies, which are tailored to the requirements of a connected vehicle platform. An abstract overview of the cloud components is given in the Figure below.
 
 ![kuksa-cloud-backend](Kuksa_Cloud.png)
+
+
+*Figure 8. Cloud component overview.*
 
 Central functionalities rely on a unified and secure communication between the back-end and the in-vehicle platform. In this regard, the connectivity for a large number of vehicles is realized using [Eclipse Hono](https://www.eclipse.org/hono/), which receives telemetry as well as event data and allows to transmit information to the vehicles. Open communication protocols such as AMQP and MQTT are accompanied by vehicle identity management.
 
@@ -851,4 +913,4 @@ The deployment scripts are divided into the following parts:
    
 2. Eclipse Hono enables the deployment of a messaging infrastructure.
 3.  Kubernetes provides functions for the Kubernetes deployment of the Kuksa cloud.
-4. Utils scripts that are included by other parts of the deployment infrastructure (e.g. handling static IP-addresses for the services). It is possible to set static IP-addresses and DNS entries for deployed services. For more details on that configuration see the *Readme. md* file in the *utils* directory.
+4. Utils scripts that are included by other parts of the deployment infrastructure (e.g. handling static IP-addresses for the services). It is possible to set static IP-addresses and DNS entries for deployed services. For more details on that configuration see the `Readme.md` file in the `utils` directory.
