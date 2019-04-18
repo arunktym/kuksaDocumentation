@@ -71,7 +71,7 @@
       5.1.1 eNodeB (Baseband Unit) (BBU) concept..............................21
       5.1.2 eNodeB (Remote Radio Units) (RRU) concept.........................21
       
-## 6. Cloud back-end
+## 6. Cloud back-end details
 
     6.1 Message Gateway concept...............................................22
     6.2 Device Management Backend concept.....................................23
@@ -96,7 +96,7 @@
 ## 8. Cloud back-end
 
     8.1 Kuksa Cloud Deployment................................................36
-
+    8.2 Getting started with Kuksa Appstore...................................36
 
 
 
@@ -524,7 +524,7 @@ ID| Property|
 
 
 
-> # **6. Cloud back-end**
+> # **6. Cloud back-end details**
 
 The cloud back-end provides service components to the connected vehicle by making sure a reliable and safe functionality according to the pre-defiened operation. Just like the In-vehicle platform, the cloud back-end is composed of multiple layers: 
 **Core Layer**: the core layer fuctions as
