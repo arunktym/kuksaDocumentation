@@ -914,3 +914,7 @@ The deployment scripts are divided into the following parts:
 2. Eclipse Hono enables the deployment of a messaging infrastructure.
 3.  Kubernetes provides functions for the Kubernetes deployment of the Kuksa cloud.
 4. Utils scripts that are included by other parts of the deployment infrastructure (e.g. handling static IP-addresses for the services). It is possible to set static IP-addresses and DNS entries for deployed services. For more details on that configuration see the `Readme.md` file in the `utils` directory.
+
+> ## 8.2 Getting started with Kuksa Appstore
+
+The neccessary infrastructures, prerequisits, key features and deployment setups are discussed in this [repository](https://github.com/eclipse/kuksa.cloud/tree/master/kuksa-appstore).  
