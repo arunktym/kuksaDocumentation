@@ -27,3 +27,12 @@ In order to make new applications applicable to a greater amount of vehicles, ap
 > *7.2.1 Here are repository folders for [kuksa.apps](https://github.com/eclipse/kuksa.apps)*
 > 
 > *7.2.2 Getting started with [Kuksa appstore](https://github.com/eclipse/kuksa.cloud/tree/master/kuksa-appstore)*
+
+
+> ## 7.3 Getting started with the In-Vehicle platform
+
+[Kuksa IDE - Developers Guide](https://gitlab-pages.idial.institute/pedro.cuadrachamorro/kuksa-ide/) containes the neccessary guides such as:- *Quick start*, *Kuksa IDE Custom Assembly*, *Plugins*, *Stacks* and *Sample Projects*. 
+
+> ## 7.3.1 Kuksa App example
+
+The eclipse Che doesn’t provide a standard mechanism to add custom sample projects during build time. Therefore, Kuksa IDE provides an easy and straight forward mechanism to append them to ones provided by Eclipse Che during build time. [Sample Projects](https://gitlab-pages.idial.institute/pedro.cuadrachamorro/kuksa-ide/samples/index.html) can be found from this link.

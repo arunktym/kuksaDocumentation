@@ -92,7 +92,8 @@
     7.2 IDE...................................................................32
       7.2.1 kuksa.apps........................................................34
       7.2.2 kuksa appstore....................................................34
-
+    7.3 Getting started with the In-Vehicle platform..........................34
+      7.3.1 Kuksa App example.................................................34
 ## 8. Cloud back-end
 
     8.1 Kuksa Cloud Deployment................................................36
@@ -849,6 +850,7 @@ Kuksa also supports the simplified deployment of new applications for both the c
 
 
 In order to make new applications applicable to a greater amount of vehicles, applications need to be centrally checked, managed, and organized with regard to various in-vehicle derivatives and variants in such a way that only vehicle-appropriate applications are accessible. Similar to a Smartphone App Store, it has to be possible to add new functions and applications to their vehicle or perform updates or upgrades. Therefore, standardized interfaces of the in-vehicle and cloud platforms are required and they must offer the most diverse and yet simple infrastructure for vehicle owners. Authentication methods, security concepts, variant management, and suitable data transmission technologies in combination with the publicly accessible ecosystem form mandatory components as well as the difference to existing solutions. [Click](https://www.eclipse.org/community/eclipse_newsletter/2018/july/kuksa.php) here to read more.
+
 > *7.2.1 Here are repository folders for [kuksa.apps](https://github.com/eclipse/kuksa.apps)*
 > 
 > *7.2.2 Getting started with [Kuksa appstore](https://github.com/eclipse/kuksa.cloud/tree/master/kuksa-appstore)*
@@ -859,14 +861,20 @@ In order to make new applications applicable to a greater amount of vehicles, ap
 
 <div style="page-break-after: always;"></div>
 
+> ## 7.3 Getting started with the In-Vehicle platform
 
+[Kuksa IDE - Developers Guide](https://gitlab-pages.idial.institute/pedro.cuadrachamorro/kuksa-ide/) containes the neccessary guides such as:- *Quick start*, *Kuksa IDE Custom Assembly*, *Plugins*, *Stacks* and *Sample Projects*. 
+
+> ## 7.3.1 Kuksa App example
+
+The eclipse Che doesn’t provide a standard mechanism to add custom sample projects during build time. Therefore, Kuksa IDE provides an easy and straight forward mechanism to append them to ones provided by Eclipse Che during build time. [Sample Projects](https://gitlab-pages.idial.institute/pedro.cuadrachamorro/kuksa-ide/samples/index.html) can be found from this link.
 
 
 > # 8. Cloud back-end
 
 The cloud back-end is the counterpart to the services provided by the in-vehicle platform. It offers basic services regarding connectivity, authentication, authorization, device update and data management. These services are realized by open source [Eclipse IoT](https://iot.eclipse.org/) technologies, which are tailored to the requirements of a connected vehicle platform. An abstract overview of the cloud components is given in the Figure below.
 
-![kuksa-cloud-backend](Kuksa_Cloud.png)
+![kuksa-cloud-backend](../ImageFile/Kuksa_Cloud.png)
 
 
 *Figure 8. Cloud component overview.*
