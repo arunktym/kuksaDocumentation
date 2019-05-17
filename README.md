@@ -1,7 +1,7 @@
 # kuksaDocumentation
 
 This training material/documentation is intended to provide an overview of Kuksa, its architecture and its intrastructure. The topics included are:-
-## 1. Introduction
+### 1. Introduction
  
 ## 2. Eclipse Kuksa Ecosystem    
 
