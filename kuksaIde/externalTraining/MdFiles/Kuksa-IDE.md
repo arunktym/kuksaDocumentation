@@ -28,8 +28,7 @@ In order to make new applications applicable to a greater amount of vehicles, ap
 
 [Kuksa IDE -Developers Guide](https://gitlab-pages.idial.institute/pedro.cuadrachamorro/kuksa-ide/index.html) consists of build the assembly for system configuration and how to start kuksa IDE.
 In addition, a [sample project](https://gitlab-pages.idial.institute/pedro.cuadrachamorro/kuksa-ide/samples/index.html) provides custome sample project that can be used as kuksa App example. 
-> *7.2.2 Getting started with [Kuksa appstore](https://github.com/eclipse/kuksa.cloud/tree/master/kuksa-appstore)*. This section introduces "kuksa In-Vehicle App" and "kuksa Cloud App".
-
+> *7.2.2 Getting started with [Kuksa appstore](https://github.com/eclipse/kuksa.cloud/tree/master/kuksa-appstore)*. 
 
 > ## 7.3 Getting started with the In-Vehicle platform
 
