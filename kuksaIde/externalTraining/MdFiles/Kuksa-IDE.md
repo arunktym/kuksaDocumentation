@@ -25,6 +25,12 @@ Kuksa also supports the simplified deployment of new applications for both the c
 
 In order to make new applications applicable to a greater amount of vehicles, applications need to be centrally checked, managed, and organized with regard to various in-vehicle derivatives and variants in such a way that only vehicle-appropriate applications are accessible. Similar to a Smartphone App Store, it has to be possible to add new functions and applications to their vehicle or perform updates or upgrades. Therefore, standardized interfaces of the in-vehicle and cloud platforms are required and they must offer the most diverse and yet simple infrastructure for vehicle owners. Authentication methods, security concepts, variant management, and suitable data transmission technologies in combination with the publicly accessible ecosystem form mandatory components as well as the difference to existing solutions. [Click](https://www.eclipse.org/community/eclipse_newsletter/2018/july/kuksa.php) here to read more.
 > *7.2.1 Here are repository folders for [kuksa.apps](https://github.com/eclipse/kuksa.apps)*
+> 
+> The prerequisite to [set up the Kuksa IDE](https://github.com/eclipse/kuksa.ide/tree/master/che-6) are:
+
+    - A running docker instance on a Linux host system (tested with Ubuntu 18.04).
+    - Maven
+
 
 [Kuksa IDE -Developers Guide](https://gitlab-pages.idial.institute/pedro.cuadrachamorro/kuksa-ide/index.html) consists of build the assembly for system configuration and how to start kuksa IDE.
 In addition, a [sample project](https://gitlab-pages.idial.institute/pedro.cuadrachamorro/kuksa-ide/samples/index.html) provides custome sample project that can be used as kuksa App example. 
