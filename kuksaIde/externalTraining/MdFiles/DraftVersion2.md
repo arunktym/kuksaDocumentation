@@ -5,16 +5,15 @@
 
 
 ## *Contents*
-1. Introduction to kuksa
+## 1. Introduction to kuksa
    
-   1.1. Need of kuksa
+     1.1. Need of kuksa
 
-   1.2. Advantage of kuksa
+     1.2. Advantage of kuksa
 
-   1.3. How do we use kuksa
+     1.3. How do we use kuksa
 
-2. Kuksa App IDE
-
+## 2. Kuksa App IDE
     2.1 Getting Started with the App IDE
 
         2.1.1 Required System Configuration
@@ -36,7 +35,7 @@
 
     2.2 Some Kuksa App examples
 
-3. Kuksa In-Vehicle platform
+## 3. Kuksa In-Vehicle platform
 
     3.1 Getting started with the In-Vehicle platform
 
@@ -62,7 +61,7 @@
 
     3.4 Overview of the Kuksa In-Vehicle API
 
-4. Kuksa Cloud Platform
+## 4. Kuksa Cloud Platform
 
     4.1 Getting started with the Cloud platform
 
@@ -81,6 +80,12 @@
     4.4 Overview of the Kuksa Cloud API
 
     4.5 Marketplace presentation and features
+
+                 
+
+
+
+
 
 
 > # **1. Introduction To Kuksa**
