@@ -48,26 +48,26 @@ Kuksa also supports the simplified deployment of new applications for both the c
 
 In order to make new applications applicable to a greater amount of vehicles, applications need to be centrally checked, managed, and organized with regard to various in-vehicle derivatives and variants in such a way that only vehicle-appropriate applications are accessible. Similar to a Smartphone App Store, it has to be possible to add new functions and applications to their vehicle or perform updates or upgrades. Therefore, standardized interfaces of the in-vehicle and cloud platforms are required and they must offer the most diverse and yet simple infrastructure for vehicle owners. Authentication methods, security concepts, variant management, and suitable data transmission technologies in combination with the publicly accessible ecosystem form mandatory components as well as the difference to existing solutions. [Click](https://www.eclipse.org/community/eclipse_newsletter/2018/july/kuksa.php) here to read more.
 
-# 7.1.3 Writing your first Kuksa In-Vehicle App
+## 7.1.3 Writing your first Kuksa In-Vehicle App
 
 Kuksa Demo-Apps for the In-Vehicle platform can be found from the repository link [here](https://github.com/eclipse/kuksa.apps/tree/master/invehicle-apps).
 
-# 7.1.4 Writing your first Kuksa Cloud App
+## 7.1.4 Writing your first Kuksa Cloud App
 
 Demo Kuksa Cloude App can be found from the repository link [here](https://github.com/eclipse/kuksa.apps/tree/master/cloud-apps). However, by the time of preparing this document, the repository content was void.
 
-# <span style="color:red"> *7.1.5 Testing your Apps* </span>
+## <span style="color:red"> *7.1.5 Testing your Apps* </span>
 
 
-# <span style="color:red"> *7.1.6 Deploying your Apps* </span>
+## <span style="color:red"> *7.1.6 Deploying your Apps* </span>
 
-# <span style="color:red"> *7.1.7 Install your In-Vehicle App in your car (see In-Vehicle platform Getting Started)* </span>
+## <span style="color:red"> *7.1.7 Install your In-Vehicle App in your car (see In-Vehicle platform Getting Started)* </span>
 
-# <span style="color:red"> *7.1.8 Install your Cloud App in your Cloud (see Cloud platform Getting Started)* </span>
+## <span style="color:red"> *7.1.8 Install your Cloud App in your Cloud (see Cloud platform Getting Started)* </span>
 
 
  
-## 7.2 Kuksa App example
+## 7.2 Some Kuksa App examples
  
 
 The eclipse Che doesn’t provide a standard mechanism to add custom sample projects during build time. Therefore, Kuksa IDE provides an easy and straight forward mechanism to append them to ones provided by Eclipse Che during build time. [Sample Projects](https://gitlab-pages.idial.institute/pedro.cuadrachamorro/kuksa-ide/samples/index.html) can be found from this link.

@@ -1,13 +1,195 @@
-# **8 Kuksa In-Vehicle platform**
+# Kuksa User Manual. 
+<img src="../ImageFile/ITEA3.png" width="750" height="300" />
 
-## 8.1 Getting started with the In-vehicle platoform
+<img src="../ImageFile/Appstacle.png" width="750" height="300" />
+
+
+## *Contents*
+1. Introduction to kuksa
+   
+   1.1. Need of kuksa
+
+   1.2. Advantage of kuksa
+
+   1.3. How do we use kuksa
+
+2. Kuksa App IDE
+
+    2.1 Getting Started with the App IDE
+
+        2.1.1 Required System Configuration
+
+        2.1.2 How to set up the IDE
+
+        2.1.3 Writing your first Kuksa In-Vehicle App
+
+        2.1.4 Writing your first Kuksa Cloud App
+
+        2.1.5 Testing your Apps
+
+        2.1.6 Deploying your apps
+
+        2.1.7 Install your In-Vehicle App in your car (see In-Vehicle
+        platform Getting Started)
+
+        2.1.8 Install your Cloud App in your Cloud (see Cloud platform Getting Started)
+
+    2.2 Some Kuksa App examples
+
+3. Kuksa In-Vehicle platform
+
+    3.1 Getting started with the In-Vehicle platform
+
+        3.1.1 Required System Configuration (HW/SW)
+
+        3.1.2 Set up the platform
+
+            3.1.2.1 using a RPi
+
+            3.1.2.2 using XXX?
+
+        3.1.3 Connect the platform to a Kuksa portal
+
+        3.2.4 Search for an In-Vehicle App
+
+        3.1.5 Install an In-Vehicle App
+
+        3.1.6 Test the In-Vehicle App
+
+    3.2 Configure the In-Vehicle platform
+
+    3.3 Overview of the In-Vehicle platform and its architecture
+
+    3.4 Overview of the Kuksa In-Vehicle API
+
+4. Kuksa Cloud Platform
+
+    4.1 Getting started with the Cloud platform
+
+        4.1.1 Required System Configuration
+
+        4.1.2 Installing and testing the Cloud platform
+
+        4.1.3 Installing a Cloud App and its In-Vehicle App
+
+        4.1.4 Testing the Cloud App
+
+    4.2 Configuring the Cloud platform
+
+    4.3 Overview of the Cloud platform and its architecture
+
+    4.4 Overview of the Kuksa Cloud API
+
+    4.5 Marketplace presentation and features
+
+
+> # **1. Introduction To Kuksa**
+
+## *1.1 Need of Kuksa:* 
+
+Because today's software-intensive automotive systems are still developed in silos by each car manufacturer or OEM in-house, long-term challenges in the industry are yet unresolved. Establishing a standard for car-to-cloud scenarios significantly improves comprehensive domain-related development activities and opens the market to external applications, service provider, and the use of open source software wherever possible without compromising security. Connectivity, OTA maintenance, automated driving, electric mobility, and related approaches increasingly demand technical innovations applicable across automotive players.
+
+## *1.2 Advantage of Kuksa:* 
+
+The open and secure Eclipse Kuksa project will contain a cloud platform that interconnects a wide range of vehicles to the cloud via in-car and internet connections. This platform will be supported by an integrated open source software development environment including technologies to cope especially with software challenges for vehicles designed in the IoT, Cloud, and digital era.
+
+## *1.3 How do we use Kuksa*
+
+The kuksa ecosystem will provide a comprehensive environment across various frameworks and technologies for *the in-vehicle platform*, *the cloud platform*, and *an app development IDE* - that is, the complete tooling stack for the connected vehicle domain [see Figure 1 below](). Essential to this environment will be the capabilities for collecting, storing, and analysing vehicle data in the cloud as well as the transmission of diverse information such as cloud calculation results (e.g. improved routing), software maintenance updates or even complete new applications. While many IoT solutions exist in the Eclipse IoT ecosystem, Eclipse Kuksa combines the necessary existing technologies and fills the gaps for the specific requirements of the connected embedded real-time nature of the automotive domain.[see here for more details](https://www.eclipse.org/kuksa/about/). 
+
+![EKuksa](../ImageFile/EKuksa.png)
+
+       Figure 1. Eclipse kuksa ecosystem
+
+(Source: https://www.eclipse.org/kuksa/about/EKuksa.png )
+
+
+># **2. Kuksa App IDE**
+
+### *Table 1. Eclipse Che Kuksa instance version*
+   |Available|Version number|
+   |---------|--------------|
+   |Current  |6.10|
+   |Plan     |7.0|
+
+## 2.1 Getting Started with the App IDE
+
+Kuksa IDE is built as a full custom Eclipse Che Assembly. Therefore, it includes all assembly components specified and described in Eclipse Che Assembly are included into Kuksa IDE’s build system. A quick start steps can be found from the link [here](https://kuksa-che-ide.readthedocs.io/en/latest/quick/index.html).
+
+## 2.1.1 Requirement system configuration
+
+The neccessary prerequisite to build and deploy Eclipse Che Kuksa are:
+    
+    -  A running docker instance on a Linux host system (tested with Ubuntu 18.04).
+  
+    -   Maven
+  
+Additionally, steps for building and running a Eclipse Che Kuksa instance in version 6.x are available [here](https://kuksa-che-ide.readthedocs.io/en/latest/).
+
+## 2.1.2 How to setup the IDE
+
+To set up Eclipse Che Kuksa, the following steps are necessary. If one wants to build and deploy AGL applications & services within Che:
+
+- Create a new workspace with Automotive Grade Linux (AGL) as selected stack
+- Go to "Profile" → "Preferences" → "Remote Targets" and add a new Remote Target with the device IP and the according User, e.g. "root". Then select the Target.
+- Go to Profile → Preferences → Yocto Settings and add a new SDK with a Name, e.g. "agl-rover", a Version, e.g. "1.0.0" and a link to an appropriate AGL SDK, e.g. the AGL [Rover](https://github.com/app4mc-rover) SDK from "https://owncloud.idial.institute/s/kpntqpTz8cgx7X6/download", as Download Link. Then select the added Yocto SDK.
+To avoid connection trouble, open the Terminal and ssh into the appropriate Device: ssh < User >@< IP >
+
+## 2.1.2.1 Model-driven Development of AGL Applications and Services
+
+The Eclipse Che Kuksa instance simplifies the development of AGL applications and services. AGL features the usage of automotive applications based on HTML5, JavaScript, and C/C++, which run on top of AGL. While applications realize a distinct use case, services offers functionality to all applications. For more information please refer to the [AGL documentation](https://docs.automotivelinux.org/docs/apis_services/en/dev/).
+
+The following sections demonstrate the development of AGL applications/services in a model-driven way based on the tool RAML2AGL (cf. Section [Raml2AGL](https://github.com/eclipse/kuksa.ide/tree/master/che-6#raml2agl) ) as well as the building and deployment of AGL applications/services to a remote device running AGL (cf. Section [Building & Deploying](https://github.com/eclipse/kuksa.ide/blob/master/che-6/building-and-deploying)).
+
+## 2.1.2.2 IDE
+
+The IDE provided under Eclipse Kuksa not only support the development of applications for the vehicle component, but also the creation of applications for the cloud. Users should be able to choose between two different workspaces and technology stacks that contain the preconfigured and embedded APIs as well as software libraries of the respective applications to be developed. This allows the car to be equipped with new functions and new services to be deployed in the cloud.
+
+Kuksa offers various APIs for implementing vehicle applications, a project template for cloud services, and wizards for easily providing vehicle applications in the App Store via the IDE. The extensive provision of the various APIs and libraries in the IDE enables accessing existing communication interfaces for the secure data transmission, storage, management, and authentication without having to take separate measurements for processing or interpreting the data.
+
+Kuksa also supports the simplified deployment of new applications for both the cloud and vehicle components. This is provided by a pre-configured Eclipse Che stack, to which only the address of a target platform must be specified. Configuration, building and deployment can be done at the push of a button without further configuration or processing. Depending on the application, different development tools (e.g. Logging, Debugging, Tracing,...) can be included. Of course, syntax highlighting, code completion, and other necessary IDE functions are supported. For instance, the in-vehicle Eclipse Kuksa Che stack for AGL development activities features including Yocto based SDKs in order to support target specific programming shown in the screenshot below. After compiling and building software, specifying a target IP allows also the deployment process.
+
+![Kuksa_IDE screenshot](../ImageFile/Kuksa_IDE.png)
+        
+        Figure 2. Kuksa IDE screenshot.
+
+In order to make new applications applicable to a greater amount of vehicles, applications need to be centrally checked, managed, and organized with regard to various in-vehicle derivatives and variants in such a way that only vehicle-appropriate applications are accessible. Similar to a Smartphone App Store, it has to be possible to add new functions and applications to their vehicle or perform updates or upgrades. Therefore, standardized interfaces of the in-vehicle and cloud platforms are required and they must offer the most diverse and yet simple infrastructure for vehicle owners. Authentication methods, security concepts, variant management, and suitable data transmission technologies in combination with the publicly accessible ecosystem form mandatory components as well as the difference to existing solutions. [Click](https://www.eclipse.org/community/eclipse_newsletter/2018/july/kuksa.php) here to read more.
+
+## 2.1.3 Writing your first Kuksa In-Vehicle App
+
+Kuksa Demo-Apps for the In-Vehicle platform can be found from the repository link [here](https://github.com/eclipse/kuksa.apps/tree/master/invehicle-apps).
+
+## 2.1.4 Writing your first Kuksa Cloud App
+
+Demo Kuksa Cloude App can be found from the repository link [here](https://github.com/eclipse/kuksa.apps/tree/master/cloud-apps). However, by the time of preparing this document, the repository content was void.
+
+## <span style="color:red"> *2.1.5 Testing your Apps* </span>
+
+
+## <span style="color:red"> *2.1.6 Deploying your Apps* </span>
+
+## <span style="color:red"> *2.1.7 Install your In-Vehicle App in your car (see In-Vehicle platform Getting Started)* </span>
+
+## <span style="color:red"> *2.1.8 Install your Cloud App in your Cloud (see Cloud platform Getting Started)* </span>
+
+
+ 
+## 2.2 Some Kuksa App examples
+ 
+
+The eclipse Che doesn’t provide a standard mechanism to add custom sample projects during build time. Therefore, Kuksa IDE provides an easy and straight forward mechanism to append them to ones provided by Eclipse Che during build time. [Sample Projects](https://gitlab-pages.idial.institute/pedro.cuadrachamorro/kuksa-ide/samples/index.html) can be found from this link.
+
+
+# **3 Kuksa In-Vehicle platform**
+
+## 3.1 Getting started with the In-vehicle platoform
 
 [Eclipse Kuksa](https://www.eclipse.org/kuksa/) includes an open and secure cloud platform that interconnects a wide range of vehicles to the cloud via open in-car and Internet connection and is supported by an integrated open source software development ecosystem. The Eclipse Kuksa project conatins a set of repositories and this repo is one among those that contains in-vehicle platform code and also contains required layers and bindings to build a Kuksa adapted AGL (Automotive Grade Linux) distribution. The in-vehicle platform is primarily designed to work with AGL. However the individual components found in [this repo](https://github.com/eclipse/kuksa.invehicle) could be used on other platforms as well.
 
 Kuksa is a wrapper project around Automotive Grade Linux (AGL). From its side, AGL uses Yocto/Bitbake building system to build an automotive domain specific Linux distribution. Therefore, this projects provides a building system that adds Kuksa's specific Bitbake layers on top of the original AGL. The scripts in this project help ease the process of building an AGL image by simple using a few commands. This project includes the yocto recipes found in meta-kuksa project.
 
 
-## 8.1.1 Required System Configuration (HW/SW)
+## 3.1.1 Required System Configuration (HW/SW)
 
 In order to Build the Image/SDK with cmake scripts, the required system configuration both (hardware and software) are:
 
@@ -96,7 +278,7 @@ BBLAYERS =+ " \
 Now copy the meta-kuksa folder (Link : https://github.com/eclipse/kuksa.invehicle/agl-kuksa) into the $HOME/workspace_agl directory.
 
 
-## 8.1.2 Set up the platform
+## 3.1.2 Set up the platform
 
 To get started with In-Vehicle platform, AGL KUKSA Build and Run on Raspberry Pi 3 / Compute Module 3 (Lite) can be found from the link [here](https://github.com/eclipse/kuksa.invehicle/tree/master/agl-kuksa).
 
@@ -124,7 +306,12 @@ With meta-kuksa layer the wifi connection could be set up while building an Imag
 The elm327-datafeeder service connects to an ELM327 Bluetooth adapter to retrieve data from the vehicle. Hence the bluetooth connection with the ELM327 adapter needs to be established before the service starts. The BT connection can be configured by Updating the MAC-Address of the adapter along with its pairing PIN. The MAC-Addr and PIN can be updated in file meta-kuksa/recipes-elm327-visdatafeeder/elm327-visdatafeeder/files/bt_setup.sh
 
 Update the fields
+
+
+
 ![screenshot](../ImageFile/bt_setup.png)
+
+    Figure 3. schreenshot of bluetooth connection setup.
 
 Alt text
 
@@ -136,7 +323,7 @@ This would take a few minutes to execute and at the end of the process the boota
 
 $HOME/workspace_agl/build/tmp/deploy/images/raspberrypi3
 
-## 8.1.3 Connect the platform to Kuksa portal
+## 3.1.3 Connect the platform to Kuksa portal
 
 Once the image is ready, burn it onto a SD-card and boot up the image on raspi 3. The w3c-visserver-api requires the vss_rel_1.0.json file to set up the vss tree structure. This file can be copied to the /usr/bin/w3c-visserver folder by using scp command (sample file is available under https://github.com/GENIVI/vehicle_signal_specification or could also be generated using the tools in the repo). Once the file has been copied reboot the raspi 3.
 
@@ -150,9 +337,9 @@ The apps connect to the w3c-visserver service using a websocket connection and r
 
 The Datalogger example for kuksa-app which connects to the w3c-visserver service via Websocket and talks to the Eclipse Hono MQTT adapter are :- [DataLogger-HTTP app](https://github.com/eclipse/kuksa.invehicle/tree/master/datalogger-http) and [DataLogger-Mqtt](https://github.com/eclipse/kuksa.invehicle/tree/master/datalogger-mqtt).
 
-## <span style="color:red"> *8.1.4 Search for an In-Vehicle App* </span>
+## <span style="color:red"> *3.1.4 Search for an In-Vehicle App* </span>
 
-## 8.1.5 Install an In-Vehicle App
+## 3.1.5 Install an In-Vehicle App
 
 In-vehicle application software installation/update
 
@@ -170,11 +357,11 @@ This message shall include the name of last version of the software and binary f
 
 This tutorial [link](https://app4mc-rover.github.io/rover-docs/content/installation.html#) contains how to set up a Rover-specific Raspbian image from scratch and the basic workflow to run the Roverapp applications.
 
-## <span style="color:red"> *8.1.6 Test the In-Vehicle App* </span>
+## <span style="color:red"> *3.1.6 Test the In-Vehicle App* </span>
 
-## <span style="color:red"> *8.2 Configure the In-Vehicle platform* </span>
+## <span style="color:red"> *3.2 Configure the In-Vehicle platform* </span>
 
-## 8.3 Overview of the In-Vehicle platform and its architecture.
+## 3.3 Overview of the In-Vehicle platform and its architecture.
 
 ## In-Vehicle Platform
 
@@ -195,7 +382,7 @@ The APPSTACLE environment is created to provide addon services to the connected 
 
 <img src="../ImageFile/kuksaComponents.png" width="750" height="300" />
 
-*Figure 2. Eclipse base Open source solutions to inreach kuksa components*
+    *Figure 4. Eclipse base Open source solutions to inreach kuksa components*
 
 *(source:https://www.researchgate.net/profile/Marco_Wagner2/publication/330281127_Innovation_through_Openness_-_The_Open_Source_Connected_Vehicle_Framework_Eclipse_Kuksa/links/5c371b5892851c22a3691df8/Innovation-through-Openness-The-Open-Source-Connected-Vehicle-Framework-Eclipse-Kuksa.pdf?origin=publication_detail)*
 
@@ -215,11 +402,11 @@ Automotive protocols are classified by the Society of Automotive Engineers (SAE)
 
 ![AutomotiveNetwork](../ImageFile/AutomotiveNetwork.png)
 
-   Firugre 3. Automotive Network.
+    Figure 5. Automotive Network.
 
 
 
- ### *Table 1.: Characteristics of the communication protocols*
+ ### *Table 12.: Characteristics of the communication protocols*
 
  |Bus|LIN|CAN|CAN FD|FlexRay|MOST|Automotive Ethernet|
  |---|----|----|----|----|----|----| 
@@ -259,12 +446,12 @@ The technology evolution in the automotive vehicles contributed to the demands f
 • Vehicle-2-Network (V2N) / Network-2-Vehicle (N2V), 5) Infrastructure-2-Network (I2N) /
 Network-2-Infrastructure (N2I).
 
-These types along with their interactions are demonstrated in <span style="color:lightblue">Figure 4</span>.
+These types along with their interactions are demonstrated in <span style="color:lightblue">Figure 6</span>.
 
 ![V2XCommunicationType](../ImageFile/V2XCommunicationType.png)
 
 
-*Figure 4. V2X communication types*
+*Figure 6. V2X communication types*
 
 The units supporting V2X communication are:
 
@@ -332,7 +519,7 @@ Units (ECUs) in the automotive domain. In order to separate the development proc
 ![Autosar Layer Models](../ImageFile/AutosarLayerModel.png)
 
 
-*Figure 4. Autosar Layers*
+    Figure 7. Autosar Layers
 
 The top layer is formed by the application software. It is divided into software components, each of which realizes a part of the application and can consume and provide data via so-called ports. Any communication that does not take place via port connections is forbidden. A port is classified via a port interface (here referred to as interface). Two ports can only be connected to each other if both ports use compatible interfaces.
 Two important communication paradigms, that are selected by interfaces, are client-server and
@@ -472,7 +659,7 @@ which forms the middle layer. The RTE specification document defines a schema fo
 ||– networking configuration
 ||• User credentials|
 
-## 8.4 Overview of the Kuksa In-Vehicle API
+## 3.4 Overview of the Kuksa In-Vehicle API
 
 The Kuksa In-Vehicle API implementation is based on [W3C Vehicle Information Service Specification](https://www.w3.org/TR/2018/CR-vehicle-information-service-20180213/). 
 
@@ -483,3 +670,184 @@ The implementation provides all the major funtionality defined in the above spec
 3. [jwt-cpp](https://github.com/Thalhammer/jwt-cpp) which is under MIT license.
 
 The overall details on how to build and run W3C as well as details of W3C VIS Server Implementation can be found from the repo [link here](https://github.com/eclipse/kuksa.invehicle/tree/master/w3c-visserver-api).
+
+# **4 Kuksa Cloud Platform**
+
+## 4.1 Getting started with the cloud platform
+
+This repo [link](https://github.com/eclipse/kuksa.cloud/tree/master/deployment) contains script directory and it's subdirectories help to setup and deployment of the Kuksa cloud. These scripts assume a running Kubernetes cluster which can be configured using kubectl. More information regarding the parameters of the scripts can be found within the respective script file of the [link](https://github.com/eclipse/kuksa.cloud/tree/master/deployment).
+
+> ### Structure
+
+The deployment scripts are divided into the following parts:
+
+    1. Azure for Azure-specific configuration that provides the basis of Kubernetes.
+    2. Eclipse hawkBit enables the deployment of the corresponding software update components, in particular the update server. Note that this step requires the installation of the command line tool kompose. Installation instructions can be found at http://kompose.io/
+    3. Eclipse Hono enables the deployment of a messaging infrastructure.
+    4. Kubernetes provides functions for the Kubernetes deployment of the Kuksa cloud.
+    5. Utils scripts that are included by other parts of the deployment infrastructure (e.g. handling static IP-addresses for the services). It is possible to set static IP-addresses and DNS entries for deployed services. For more details on that configuration see the Readme.md file in the utils directory.
+
+
+
+## <span style="color:red"> *4.1.1 Required System Configuration* </span>
+
+To get started, the requied infrastructures are:
+
+
+    Java 8
+    Maven
+    Spring-Boot and other dependencies(data-jpa, feign client,pagination)
+    Vaadin
+    Swagger (for Rest API documentation)
+
+## Prerequisites
+
+Just run AppStoreApplication.java class.Spring boot has an embedded Tomcat instance. Spring boot uses *Tomcat7* by default, if you change Tomcat version, you have to define these configuration in *pom.xml*. But you have a few options to have embedded web server deployment instead of Tomcat like Jetty(HTTP (Web) server and Java Servlet container) or Java EE Application Server. You have to configure these replacements from default to new ones in *pom.xml*. 
+For detail information, follow the [link](https://github.com/eclipse/kuksa.cloud/tree/master/kuksa-appstore).
+
+## <span style="color:red"> *4.1.2 Installing and testing the Cloud platform* </span>
+## <span style="color:red"> *4.1.3 Installing a Cloud App and its In-Vehicle App* </span>
+## <span style="color:red"> *4.1.4 Testing the Cloud App* </span>
+
+ ## 9.2 Configuring the Cloud platform
+
+- The Microsoft Azure Deployment contains the IP adresses and DNS names. This [link](https://github.com/eclipse/kuksa.cloud/tree/master/deployment/azure) explains the deployment of Azure. 
+- Similarly, the [Eclipse hawkBit Deployment](https://github.com/eclipse/kuksa.cloud/tree/master/deployment/eclipse-hawkbit) repo link consists of neccessary deployment steps.  
+- Deployment of Eclipse hawkBit can be found from the repo link [here](https://github.com/eclipse/kuksa.cloud/tree/master/deployment/eclipse-hawkbit).
+- Eclipse Hono Deployment is available from this [link](https://github.com/eclipse/kuksa.cloud/tree/master/deployment/eclipse-hono).
+- Kubernetes-specific functionality details can be accessed from the repo link [here](https://github.com/eclipse/kuksa.cloud/tree/master/deployment/kubernetes).
+
+## <span style="color:red"> *4.3 Overview of the Cloud platform and its architecture* </span>
+
+## <span style="color:red"> *4.4 Overview of the Kuksa Cloud API* </span>
+ 
+## 4.5 Marketplace presentation and features
+
+
+>## Marketplace Backend concept:
+
+ID| Property|
+  |------|------|
+  |1. |• Stores and manages the software and data artifacts related to the apps that are installed on the in-vehicle platform
+||• Initiates and controls the communication with the app provider backends
+||• Interacts with potential payment providers, depending on the payment methods applied (Credit/Debit Card, SMS)
+||• Stores the data related to registered users (vehicle owners and app developers)
+||• Central hub for the interaction with app developers
+||• Provides app data to the in-vehicle platforms via the device management back-end
+||• Scan app software and data artifacts regarding vulnarabilities and malware
+||• Question: Should in-app transactions be possible?|
+|2.|**Process**
+||• User input via the Marketplace Frontend
+||– Vehicle owner core data (Name, Address, Supported payment methods, User vehicle mappings (1 User, N Vehicles))
+||– App developer core data (Name, Company, Address, Supported payment methods, Apps provided)
+||– Transactional data regarding buying and returning apps (Transaction ID, Transaction status, Payment method applied, Vehicle Identification Number, Version of the app transferred
+||**Provide**
+||• Software and data artifacts that are provided by the app developers
+||– Software (Compiled source code)
+||– Data (Licenses, Documentation, Version history, Supported in-vehicle software platforms, Supported in-vehicle hardware platforms)
+||– API/Frontend for app developer interaction (Transferring software and data artifacts to the backend, Receiving account and app related information, e.g. number of downloads or total revenue per app)|
+|3.|**Input**
+||• Marketplace frontend (see informations listed above)
+||• Payment provider backends (Handling of payment transactions)
+||• App developer backends (Receiving data and software artifacts) Output
+||• Marketplace frontend (Deliver data requested by the frontend, e.g., results for search queries)
+||• In-vehicle platforms, via Device Management component (Software and dataartifcats regarding specific apps)
+||• App developer backends (Transaction and evaluation data)
+||• Identity Management (Requests for user authentication and authorisation)|
+|4.|• There should be only a single instance within the cloud backend |
+|5.|• Deployment configuration regarding micro services
+||– External IP addresses
+||– Ports
+||– Connection to other services, e.g, Identity Management|
+
+>## Marketplace Frontend concept:
+
+ID| Property|
+  |------|------|
+  |1. |• Provides visual interface that enable the interaction with the Marketplace Backend
+||• Vehicle owners can search and order apps as well as initiate their transfer to the in-vehicle platform
+||• Allows app developers to access app storage and monitoring data
+||• Allows vechicle owners and app developers to edit their core data / profiles|
+|2.|**Process**
+||• Core data (vehicle owner and app developer) entered via the visual interface
+||• Query database regarding apps available for the specific in-vehicle platform
+||• Software and data artifacts send by the app developers
+||• Data referring to payment transaction, e.g., data exchange with payment providers 
+||**Provide**
+||• Visual interface depicts information regarding
+||– Vehicle owner and app developer core data
+||– App transactions
+||– App search query results|
+|3.|**Input**
+||• Vehicle owner
+||– Enter and update core data
+||– Fill out order forms
+||– Search apps via query masks
+||• App developer
+||– Enter and update core data
+||– Upload apps
+||– Retrieve monitoring data
+||**Output**
+||• Vehicle owner
+||– Display core data
+||– Display app search queries
+||• App developer
+||– Display core data
+||– Display monitoring data|
+|4.|• There exists only a single services within the backend
+||• There might be several container instances behind this service|
+|5.|• Deployment configuration regarding micro services
+||– External IP addresses
+||– Ports
+||– Connection to other services, e.g, Marketplace Backend|
+
+In addition: 
+
+The Eclipse Kuksa Appstore contains: 
+
+> ### Build Eclipse Kuksa Appstore
+
+    Script:
+        build_kuksa_appstore.sh
+    Purpose:
+        Build a Docker image for the Eclipse Kuksa Appstore and push it to a Docker registry
+    Options:
+        DOCKER_REGISTRY_SERVER: Address of the Docker registry server, e.g. running on Microsoft Azure.
+        DOCKER_REGISTRY_USERNAME: Username to sign in to the Docker registry.
+        DOCKER_REGISTRY_PASSWORD: Password to sign in to the Docker registry.
+        DOCKER_REGISTRY_EMAIL: Email to sign in to the Docker registry.
+    Stages:
+        Clone the Kuksa Git repository
+        Build with Maven
+        Build Docker image
+        Push Docker image to Docker registry
+        Final cleanup
+            Remove the clones Git repository
+
+>### Deploy Eclipse Kuksa Appstore
+
+    Script:
+        deploy_kuksa_appstore.sh
+
+    Purpose:
+        Deploys a Docker image for the Eclipse Kuksa Appstore on a Kubernetes cluster
+
+    Options:
+        APPSTORE_USERNAME: The username to set for the admin user of the appstore
+        APPSTORE_PASSWORD: The password to set for the admin user of the appstore
+        HAWKBIT_HOST: The (cluster-internal) hostname of the hawkbit server to use in the appstore
+        HAWKBIT_PORT: The (cluster-internal) port number of the hawkbit server to use in the appstore
+        HAWKBIT_USERNAME: The username to be used by the appstore to authenticate with hawkbit.
+        HAWKBIT_PASSWORD: The password to be used by the appstore to authenticate with hawkbit.
+        DOCKER_REGISTRY_SERVER: Address of the Docker registry server, e.g. running on Microsoft Azure.
+        DOCKER_REGISTRY_USERNAME: Username to sign in to the Docker registry.
+        DOCKER_REGISTRY_PASSWORD: Password to sign in to the Docker registry.
+        DOCKER_REGISTRY_EMAIL: Email to sign in to the Docker registry.
+        DOCKER_REGISTRY_SECRET: Name of the secret to access to custom Docker registry. Note that the secret is created during the deploy process within the namespace extension.
+
+    Notes:
+        Production mode is enabled for Vaadin.
+        H2 console is disabled.
+        The H2 database is persisted via a persistent volume claim.
+        The service uses a ClusterIP so it is only available behind the Ambassador gateway.
+
