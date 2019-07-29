@@ -160,13 +160,13 @@ Kuksa also supports the simplified deployment of new applications for both the c
 
 In order to make new applications applicable to a greater amount of vehicles, applications need to be centrally checked, managed, and organized with regard to various in-vehicle derivatives and variants in such a way that only vehicle-appropriate applications are accessible. Similar to a Smartphone App Store, it has to be possible to add new functions and applications to their vehicle or perform updates or upgrades. Therefore, standardized interfaces of the in-vehicle and cloud platforms are required and they must offer the most diverse and yet simple infrastructure for vehicle owners. Authentication methods, security concepts, variant management, and suitable data transmission technologies in combination with the publicly accessible ecosystem form mandatory components as well as the difference to existing solutions. [Click](https://www.eclipse.org/community/eclipse_newsletter/2018/july/kuksa.php) here to read more.
 
-## 2.1.3 Writing your first Kuksa In-Vehicle App
+## <span style="color:red">2.1.3 Writing your first Kuksa In-Vehicle App
 
-Kuksa Demo-Apps for the In-Vehicle platform can be found from the repository link [here](https://github.com/eclipse/kuksa.apps/tree/master/invehicle-apps).
+<span style="color:red">Kuksa Demo-Apps for the In-Vehicle platform can be found from the repository link [here](https://github.com/eclipse/kuksa.apps/tree/master/invehicle-apps).
 
-## 2.1.4 Writing your first Kuksa Cloud App
+## <span style="color:red">2.1.4 Writing your first Kuksa Cloud App
 
-Demo Kuksa Cloude App can be found from the repository link [here](https://github.com/eclipse/kuksa.apps/tree/master/cloud-apps). However, by the time of preparing this document, the repository content was void.
+<span style="color:red">Demo Kuksa Cloude App can be found from the repository link [here](https://github.com/eclipse/kuksa.apps/tree/master/cloud-apps). However, by the time of preparing this document, the repository content was void.
 
 ## <span style="color:red"> *2.1.5 Testing your Apps* </span>
 
@@ -285,7 +285,7 @@ Now copy the meta-kuksa folder (Link : https://github.com/eclipse/kuksa.invehicl
 
 ## 3.1.2 Set up the platform
 
-To get started with In-Vehicle platform, AGL KUKSA Build and Run on Raspberry Pi 3 / Compute Module 3 (Lite) can be found from the link [here](https://github.com/eclipse/kuksa.invehicle/tree/master/agl-kuksa).
+To get started with In-Vehicle platform: AGL KUKSA Build and Run on Raspberry Pi 3 / Compute Module 3 (Lite) can be found from the link [here](https://github.com/eclipse/kuksa.invehicle/tree/master/agl-kuksa).
 
 ## Building for the Raspberry Pi Compute Module 3 (Lite)
 
@@ -488,7 +488,13 @@ terms of throughput and offers higher reliability, even though its maximal throu
 limited than 802.11ac (from 3 to 27 Mbps raw data rate). The reason behind this is that
 802.11p was designed particularly for for safety-related Vehicular Ad-hoc NETworks (VANET),
 including the V2V and V2I/I2V concepts. IEEE 802.11p technology is currently fully specified
-and already deployed in different locations. The following paragraphs start with a description of the scenarios supported by 802.11p communi-cation and cellular communication. This is followed by a description on both the 802.11p and 5G technologies. In the scope of this section we focus on these two technologies, because, to the best of our knowledge, they are considered as the leading candidates for V2X communication. ![For detail information](../ReferenceFiles/.Appstacle_deliverable_1.1.pdf)
+and already deployed in different locations. The following paragraphs start with a description of the scenarios supported by 802.11p communi-cation and cellular communication. This is followed by a description on both the 802.11p and 5G technologies. In the scope of this section we focus on these two technologies, because, to the best of our knowledge, they are considered as the leading candidates for V2X communication. 
+<object data="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwioq9qx39njAhVBxaYKHTjwANcQFjABegQIARAC&url=https%3A%2F%2Fitea3.org%2Fproject%2Fworkpackage%2Fdocument%2Fdownload%2F4585%2FD4.1.%2520APPSTACLE%2520-%2520Concept%2520of%2520Vehicle%2520to%2520Cloud%2520to%2520Ecosystem%2520to%2520Cloud%2520to%2520Vehicle%2520HMI%2520Use%2520Case.pdf&usg=AOvVaw0xYNNQT8irOV_bBqbOIp-g" type="application/pdf" width="700px" height="700px">
+    <embed src="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwioq9qx39njAhVBxaYKHTjwANcQFjABegQIARAC&url=https%3A%2F%2Fitea3.org%2Fproject%2Fworkpackage%2Fdocument%2Fdownload%2F4585%2FD4.1.%2520APPSTACLE%2520-%2520Concept%2520of%2520Vehicle%2520to%2520Cloud%2520to%2520Ecosystem%2520to%2520Cloud%2520to%2520Vehicle%2520HMI%2520Use%2520Case.pdf&usg=AOvVaw0xYNNQT8irOV_bBqbOIp-g">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwioq9qx39njAhVBxaYKHTjwANcQFjABegQIARAC&url=https%3A%2F%2Fitea3.org%2Fproject%2Fworkpackage%2Fdocument%2Fdownload%2F4585%2FD4.1.%2520APPSTACLE%2520-%2520Concept%2520of%2520Vehicle%2520to%2520Cloud%2520to%2520Ecosystem%2520to%2520Cloud%2520to%2520Vehicle%2520HMI%2520Use%2520Case.pdf&usg=AOvVaw0xYNNQT8irOV_bBqbOIp-g">Download D4.1. APPSTACLE - Concept of Vehicle to Cloud to Ecosystem to Cloud to Vehicle HMI Use Case.pdf</a>.</p>
+    </embed>
+</object>
+
 
 |ID| Property|
   |------|------|
