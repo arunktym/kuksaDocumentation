@@ -1,6 +1,10 @@
 Here is a draft of the topics for Kuksa training materials / documentation. The goal is to provide an overview of Kuksa, its architecture and its infrastructure. If you have pointers to materials or plan to create materials that cover any of these sections, please add your name and a link/brief description.
 
-Updates and comments are welcome! 
+Updates and comments are welcome! Here is a draft of the topics for Kuksa training materials / documentation. The goal is to provide an overview of Kuksa, its architecture and its infrastructure. If you have pointers to materials or plan to create materials that cover any of these sections, please add your name and a link/brief description.
+
+Updates and comments are welcome! Some of the topics could not be fillded up. If you can contribute to the missing topics, please do not hesitate to contribute.  
+
+Check the the link: https://github.com/arunktym/kuksaDocumentation/blob/kuksaIDE/kuksaIde/externalTraining/MdFiles/DraftVersion.md 
 # Kuksa App IDE
 
     • Getting Started with the App IDE 
