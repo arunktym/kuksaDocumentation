@@ -6,7 +6,7 @@ Updates and comments are welcome! Some of the topics could not be fillded up. If
 Check the the link: https://github.com/arunktym/kuksaDocumentation/blob/kuksaIDE/kuksaIde/externalTraining/MdFiles/DraftVersion.md 
 
 Updates and comments are welcome! 
->>>>>>> 353b653f4cf875f5b19eca92a5c62eb6739cb9d9
+
 # Kuksa App IDE
 
     • Getting Started with the App IDE 
