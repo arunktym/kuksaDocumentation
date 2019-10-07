@@ -3,7 +3,7 @@
 
 
 ## Introduction
-    1. (here)[Introduction To Kuksa..................................................1]
+    1. [Introduction To Kuksa..................................................1](../# **1. Introduction To Kuksa**)
 
 ## Architecture
 
